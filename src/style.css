@@ -100,23 +100,9 @@ left: 10px;
 top: 14px;
 }
 
+
+
 .name {
-position: absolute;
-width: 72px;
-height: 23px;
-left: 10px;
-top: 137px;
-
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #000000;
-
-}
-
-#nameid {
 box-sizing: border-box;
 position: absolute;
 width: 204px;
@@ -129,21 +115,8 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-.edad {
-position: absolute;
-width: 45px;
-height: 23px;
-left: 10px;
-top: 209px;
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #000000;
-}
 
-#edadid {
+.age {
 box-sizing: border-box;
 position: absolute;
 width: 204px;
@@ -156,22 +129,9 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-.pais{
-position: absolute;
-width: 36px;
-height: 23px;
-left: 10px;
-top: 281px;
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #000000;
 
-}
 
-#paisid {
+.country {
 box-sizing: border-box;
 position: absolute;
 width: 204px;
@@ -185,21 +145,8 @@ border-radius: 10px;
 
 }
 
-.email {    
-position: absolute;
-width: 50px;
-height: 23px;
-left: 10px;
-top: 353px;
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #000000;
-}
 
-#emailid {
+.email {
 box-sizing: border-box;
 position: absolute;
 width: 204px;
@@ -212,21 +159,8 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-.password{
-position: absolute;
-width: 101px;
-height: 23px;
-left: 10px;
-top: 425px;
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #000000;
-} 
 
-#passwordId{
+.password{
 box-sizing: border-box;
 position: absolute;
 width: 204px;
