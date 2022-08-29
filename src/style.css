@@ -1,0 +1,230 @@
+body {
+    background-color: #BFD8D2;
+}
+
+.logo {
+position: absolute;
+width: 339px;
+height: 346px;
+left: 11px;
+top: 27px;
+
+}
+#email {
+box-sizing: border-box;
+position: absolute;
+width: 286px;
+height: 63px;
+left: 37px;
+top: 389px;
+background: #FEDDCD;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+#password {
+box-sizing: border-box;
+position: absolute;
+width: 286px;
+height: 63px;
+left: 37px;
+top: 489px;
+background: #FEDDCD;
+border: 1px solid #000000;
+border-radius: 10px;
+}
+
+#login {
+    position: absolute;
+    width: 100px;
+    height: 43px;
+    left: 223px;
+    top: 578px;
+    background: #DCB239;
+    border-radius: 10px;
+
+}
+
+#parrafo {
+position: absolute;
+width: 320px;
+height: 20px;
+left: 37px;
+top: 637px;
+font-family: 'Asap';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 15px;
+color: #000000;
+}
+
+#singUp {
+box-sizing: border-box;
+position: absolute;
+width: 286px;
+height: 63px;
+left: 37px;
+top: 683px;
+background: #FEDDCD;
+border: 1px solid #000000;
+border-radius: 10px;
+}
+
+.logoPagTwo{
+position: absolute;
+width: 99px;
+height: 101px;
+left: 10px;
+top: 14px;
+}
+
+.name {
+position: absolute;
+width: 72px;
+height: 23px;
+left: 10px;
+top: 137px;
+
+font-family: 'Asap';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+color: #000000;
+
+}
+
+#nameid {
+box-sizing: border-box;
+position: absolute;
+width: 204px;
+height: 35px;
+left: 127px;
+top: 131px;
+background: #FEDDCD;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+.edad {
+position: absolute;
+width: 45px;
+height: 23px;
+left: 10px;
+top: 209px;
+font-family: 'Asap';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+color: #000000;
+}
+
+#edadid {
+box-sizing: border-box;
+position: absolute;
+width: 204px;
+height: 35px;
+left: 127px;
+top: 203px;
+background: #FEDDCD;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+.pais{
+position: absolute;
+width: 36px;
+height: 23px;
+left: 10px;
+top: 281px;
+font-family: 'Asap';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+color: #000000;
+
+}
+
+#paisid {
+box-sizing: border-box;
+position: absolute;
+width: 204px;
+height: 35px;
+left: 127px;
+top: 275px;
+background: #FEDDCD;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+
+}
+
+.email {    
+position: absolute;
+width: 50px;
+height: 23px;
+left: 10px;
+top: 353px;
+font-family: 'Asap';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+color: #000000;
+}
+
+#emailid {
+box-sizing: border-box;
+position: absolute;
+width: 204px;
+height: 35px;
+left: 127px;
+top: 347px;
+background: #FEDDCD;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+.password {
+position: absolute;
+width: 50px;
+height: 23px;
+left: 10px;
+top: 353px;
+font-family: 'Asap';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+color: #000000;
+}
+
+#passwordId {
+    box-sizing: border-box;
+    position: absolute;
+    width: 204px;
+    height: 35px;
+    left: 127px;
+    top: 347px;
+    background: #FEDDCD;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    }  
+
+#OK {
+position: absolute;
+width: 100px;
+height: 43px;
+left: 231px;
+top: 491px;
+background: #DCB239;
+border-radius: 10px;
+}
