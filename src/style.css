@@ -71,7 +71,27 @@ background: #FEDDCD;
 border: 1px solid #000000;
 border-radius: 10px;
 }
+#singUpGoogle {
+margin:10px 0;
+box-sizing: border-box;
+position: absolute;
+width: 285px;
+height: 45px;
+left: 38px;
+top: 741px;
+background: #FFFFFF;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+justify-content: center;
+}
+.google{
+width: 35px;
+height: 32px;
 
+}
+
+/* pag2 */
 .logoPagTwo{
 position: absolute;
 width: 99px;
@@ -192,32 +212,33 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
 }
 
-.password {
+.password{
 position: absolute;
-width: 50px;
+width: 101px;
 height: 23px;
 left: 10px;
-top: 353px;
+top: 425px;
 font-family: 'Asap';
 font-style: normal;
 font-weight: 400;
 font-size: 20px;
 line-height: 23px;
 color: #000000;
-}
+} 
 
-#passwordId {
-    box-sizing: border-box;
-    position: absolute;
-    width: 204px;
-    height: 35px;
-    left: 127px;
-    top: 347px;
-    background: #FEDDCD;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    }  
+#passwordId{
+box-sizing: border-box;
+position: absolute;
+width: 204px;
+height: 35px;
+left: 127px;
+top: 419px;
+background: #FEDDCD;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+
+}
 
 #OK {
 position: absolute;
