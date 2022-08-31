@@ -2,37 +2,42 @@ body {
     background-color: #BFD8D2;
 }
 
+.loginPage {
+    display: flex;
+}
+
 .logo {
-position: absolute;
-width: 339px;
-height: 346px;
-left: 11px;
-top: 27px;
+    position: absolute;
+    width: 357px;
+    height: 363px;
+    left: -3px;
+    top: 10px;
 
 }
+
 #email {
-box-sizing: border-box;
-position: absolute;
-width: 286px;
-height: 63px;
-left: 37px;
-top: 389px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 286px;
+    height: 63px;
+    left: 37px;
+    top: 384px;
+    background: #FEDDCD;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
 #password {
-box-sizing: border-box;
-position: absolute;
-width: 286px;
-height: 63px;
-left: 37px;
-top: 489px;
-background: #FEDDCD;
-border: 1px solid #000000;
-border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 286px;
+    height: 63px;
+    left: 37px;
+    top: 494px;
+    background: #FEDDCD;
+    border: 1px solid #000000;
+    border-radius: 10px;
 }
 
 #login {
@@ -40,146 +45,155 @@ border-radius: 10px;
     width: 100px;
     height: 43px;
     left: 223px;
-    top: 578px;
+    top: 579px;
     background: #DCB239;
     border-radius: 10px;
-
+    font-weight: 900;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#parrafo {
-position: absolute;
-width: 320px;
-height: 20px;
-left: 37px;
-top: 637px;
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 15px;
-color: #000000;
+a {
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
-#singUp {
-box-sizing: border-box;
-position: absolute;
-width: 286px;
-height: 63px;
-left: 37px;
-top: 683px;
-background: #FEDDCD;
-border: 1px solid #000000;
-border-radius: 10px;
+.singin {
+    position: absolute;
+    width: 358px;
+    height: 20px;
+    left: 2px;
+    top: 681px;
+    font-family: 'Asap';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 15px;
+    text-align: center;
+    color: #000000;
 }
+
+.hrefSingIn {
+    font-family: 'Asap';
+    font-style: normal;
+    font-size: 18px;
+    text-decoration-line: underline;
+    color: #000AF8;
+}
+
 #singUpGoogle {
-margin:10px 0;
-box-sizing: border-box;
-position: absolute;
-width: 285px;
-height: 45px;
-left: 38px;
-top: 741px;
-background: #FFFFFF;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: absolute;
+    width: 285px;
+    height: 45px;
+    left: 40px;
+    top: 719px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    align-items: center;
+    margin: 3vh 0;
 }
-.google{
-width: 35px;
-height: 32px;
+
+.google {
+    width: 35px;
+    height: 32px;
 
 }
 
 /* pag2 */
-.logoPagTwo{
-position: absolute;
-width: 99px;
-height: 101px;
-left: 10px;
-top: 14px;
+.logoPagTwo {
+    position: absolute;
+    width: 99px;
+    height: 101px;
+    left: 10px;
+    top: 14px;
 }
 
 
 
 .name {
-box-sizing: border-box;
-position: absolute;
-width: 204px;
-height: 35px;
-left: 127px;
-top: 131px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 204px;
+    height: 35px;
+    left: 127px;
+    top: 131px;
+    background: #FEDDCD;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
 
 .age {
-box-sizing: border-box;
-position: absolute;
-width: 204px;
-height: 35px;
-left: 127px;
-top: 203px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 204px;
+    height: 35px;
+    left: 127px;
+    top: 203px;
+    background: #FEDDCD;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
 
 
 .country {
-box-sizing: border-box;
-position: absolute;
-width: 204px;
-height: 35px;
-left: 127px;
-top: 275px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 204px;
+    height: 35px;
+    left: 127px;
+    top: 275px;
+    background: #FEDDCD;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 
 }
 
 
 .email {
-box-sizing: border-box;
-position: absolute;
-width: 204px;
-height: 35px;
-left: 127px;
-top: 347px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 204px;
+    height: 35px;
+    left: 127px;
+    top: 347px;
+    background: #FEDDCD;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
 
-.password{
-box-sizing: border-box;
-position: absolute;
-width: 204px;
-height: 35px;
-left: 127px;
-top: 419px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+.password {
+    box-sizing: border-box;
+    position: absolute;
+    width: 204px;
+    height: 35px;
+    left: 127px;
+    top: 419px;
+    background: #FEDDCD;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 
 }
 
 #OK {
-position: absolute;
-width: 100px;
-height: 43px;
-left: 231px;
-top: 491px;
-background: #DCB239;
-border-radius: 10px;
+    position: absolute;
+    width: 100px;
+    height: 43px;
+    left: 231px;
+    top: 491px;
+    background: #DCB239;
+    border-radius: 10px;
 }
