@@ -1,11 +1,13 @@
 import { login } from './view/login.js'
 import { posts } from './view/posts.js'
-import { singIn } from './view/singin.js'
+import { register } from './view/register.js'
 
 export const changeRoute = (hash) => {
-  if (hash === '#/singin' || hash === ' ') {
+  if (hash === '#/register' || hash === ' ') {
     return showView(hash)
   } else if (hash === '#/posts') {
+    return showView(hash)
+  } else if (hash === '#/login') {
     return showView(hash)
   } else {
     return showView(hash)
@@ -17,15 +19,19 @@ const showView = (hash) => {
   containerRoot.innerHTML = login();
 
   switch (hash) {
-    case '#/singin':
+    case '#/register':
       containerRoot.innerHTML = "";
-      containerRoot.appendChild(singIn());
+      containerRoot.appendChild(register());
       break;
     case '#/posts':
       containerRoot.innerHTML = "";
       containerRoot.appendChild(posts());
       break;
+    case '#/login':
+      // containerRoot.innerHTML = "";
+      containerRoot.appendChild(login());
+      break;
     default:
-      containerRoot.innerHTML = `<h2>No exisite</<h2>`
+      containerRoot.innerHTML = `<h2>No existe</<h2>`
   }
 }

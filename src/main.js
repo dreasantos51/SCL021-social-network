@@ -1,7 +1,7 @@
 import { myFunction } from './lib/index.js';
 import { changeRoute } from './lib/router.js';
 import { login } from './lib/view/login.js'
-import { singIn } from './lib/view/singin.js';
+import { register } from './lib/view/register.js';
 
 
 
