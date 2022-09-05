@@ -3,7 +3,7 @@ import { auth } from "./configFirebase.js"
 import { GoogleAuthProvider,  signInWithPopup } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 const provider = new GoogleAuthProvider(); 
 
-let loginWithGoogle = () => {
+export let loginWithGoogle = () => {
     signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
@@ -23,4 +23,3 @@ let loginWithGoogle = () => {
     // ...
   });
 }
- export {loginWithGoogle}; 
