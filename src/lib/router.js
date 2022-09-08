@@ -16,7 +16,7 @@ export const changeRoute = (hash) => {
 
 const showView = (hash) => {
   const containerRoot = document.getElementById('root');
-  containerRoot.innerHTML = login();
+  containerRoot.appendChild(login());
 
   switch (hash) {
     case '#/register':
@@ -28,7 +28,7 @@ const showView = (hash) => {
       containerRoot.appendChild(posts());
       break;
     case '#/login':
-      // containerRoot.innerHTML = "";
+       containerRoot.innerHTML = "";
       containerRoot.appendChild(login());
       break;
     default:
