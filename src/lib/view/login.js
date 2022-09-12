@@ -6,29 +6,36 @@ export const login = () => {
     divLogin.classList.add("loginPage");
     
   const viewlogin = `
+    <div id= "containerLogo">
     <img class="logo" src="images/LogoClubMatch.png" />
+    </div>
  `;
     divLogin.innerHTML = viewlogin;
+    
+  const divContainer = document.createElement("div");
+  divContainer.classList.add("divContainer");
+  divLogin.appendChild(divContainer);
+
     
   /*imput de email*/
   const emailInput = document.createElement('input');
   emailInput.type = 'email'
   emailInput.classList.add("email");
   emailInput.placeholder = 'Email';
-  divLogin.appendChild(emailInput);
+  divContainer.appendChild(emailInput);
   
   /*imput de password*/
   const passwordInput = document.createElement('input');
   passwordInput.type = "password";
   passwordInput.classList.add("password");
   passwordInput.placeholder = 'Password';
-  divLogin.appendChild(passwordInput);  
+  divContainer.appendChild(passwordInput);  
   
   /*Parrafo de olvidaste tu contraseña*/
   const forgetPassword = document.createElement('p');
   forgetPassword.classList.add('forget');
   forgetPassword.innerText = '¿Haz olvidado tú contraseña? Click'
-  divLogin.appendChild(forgetPassword);
+  divContainer.appendChild(forgetPassword);
 
   const hrefForget = document.createElement('a');
   hrefForget.classList.add('hrefForget');
@@ -39,7 +46,7 @@ export const login = () => {
   /*Boton de Iniciar*/
   const buttonLogin = document.createElement('button');
   buttonLogin.classList.add('buttonLogin');
-  divLogin.appendChild(buttonLogin);
+  divContainer.appendChild(buttonLogin);
 
   const hrefLogin = document.createElement('a');
   hrefLogin.classList.add('hrefLogin');
@@ -51,7 +58,7 @@ export const login = () => {
   const redirectionRegister = document.createElement('p');
   redirectionRegister.classList.add('redirectionRegister');
   redirectionRegister.innerText = '¿Aún no tienes cuenta?'
-  divLogin.appendChild(redirectionRegister);
+  divContainer.appendChild(redirectionRegister);
 
   const hrefRegister = document.createElement('a');
   hrefRegister.classList.add('hrefRegister');
@@ -64,7 +71,7 @@ export const login = () => {
   buttonGoogle.id = 'signUpGoogle';
   buttonGoogle.innerText = 'Acceder con Google'
   buttonGoogle.addEventListener("click", loginWithGoogle);
-  divLogin.appendChild(buttonGoogle);
+  divContainer.appendChild(buttonGoogle);
 
   /*imagen Google*/
   const imgButtonGoggle = document.createElement('img');

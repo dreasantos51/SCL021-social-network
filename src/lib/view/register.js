@@ -1,19 +1,27 @@
 export const register = () => {
   const divRegister = document.createElement('div');
+  divRegister.classList.add("container");
 
-  const viewRegister = `
-      <header><p>Club</p>
-      <p>Match</p></header>
+ const viewRegister = `
+      <header>
+      <h1 class="ClubMatch">CLUB MATCH</h1>
+      </header>
       `;
-   
+
   divRegister.innerHTML = viewRegister;
+
   
   /*crear formulario*/
 
  const registerForm = document.createElement('form');
  registerForm.classList.add('registerForm');
  divRegister.appendChild(registerForm);
-    
+ 
+  const statement = document.createElement('p');
+  statement.classList.add('statement');
+  statement.innerText = "Ingresa tus datos para crear una cuenta";
+  registerForm.appendChild(statement);
+
   /*   <input type="text" class="name" placeholder="Nombre"> */
  const nameRegister = document.createElement('input');
  nameRegister.type = "text"
@@ -49,24 +57,29 @@ passwordRegister.classList.add("password");
 passwordRegister.placeholder = 'Contraseña';
 registerForm.appendChild(passwordRegister);  
 
+/*Contenedor de botones*/
+const divButtons = document.createElement('div');
+divButtons.classList.add('divButtons');
+registerForm.appendChild(divButtons);
+
 //<button type="button" name="OK" id="OK"><a href="#/login">Registrarse</a></button> */
 const buttonRegister= document.createElement('button');
 buttonRegister.id= 'OK';
-registerForm.appendChild(buttonRegister);
+divButtons.appendChild(buttonRegister);
 
 const submitRegister = document.createElement('a');
 submitRegister.classList.add('submitRegister');
 submitRegister.type = "submit";
 submitRegister.val = "submit";
-submitRegister.innerText = 'iniciar'
+submitRegister.innerText = 'Iniciar'
 submitRegister.href = '#/posts'
 buttonRegister.appendChild(submitRegister); 
+  
 
  // button type="button" name="back" id="back"><a href="#/login">Atras</a></button>
- 
 const buttonBack = document.createElement('button');
 buttonBack.id= 'back';
-registerForm.appendChild(buttonBack);
+divButtons.appendChild(buttonBack);
 
 const hrefBack = document.createElement('a');
 hrefBack.classList.add('hrefBack');
