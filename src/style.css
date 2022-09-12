@@ -1,9 +1,156 @@
 body {
     background-color: #BFD8D2;
     font-family: 'Asap', sans-serif;
+    margin: 0;
+    color: #1E3F48;
 }
 
-.loginPage {
+/*LOGIN*/
+/*LOGO*/
+#containerLogo {
+    display: flex;
+    justify-content: center;
+}
+.logo {
+    width: 60%;
+    height: 60%;
+    margin: 10% 0 0 0;
+}
+
+/*Container Login*/
+.divContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input,
+#signUpGoogle {
+    background-color: #FEDDCD;
+    width: 80%;
+    height: 4em;
+    margin: 2em 0 0 0;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.forget {
+    margin-block-start: 10px;
+}
+.hrefForget,
+.hrefLogin,
+.hrefRegister {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1E3F48;
+}
+
+.hrefForget:hover,
+.hrefRegister:hover {
+    color: white;
+}
+
+.buttonLogin {
+    background-color: #DCB239;
+    text-decoration: none;
+    width: 100px;
+    height: 43px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    border: none;
+    margin: 0 0 0 50%;
+}
+.buttonLogin:hover {
+    background-color: #DF744A;
+}
+
+.hrefLogin {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/*Botón Google*/
+#signUpGoogle {
+    background-color: white;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    font-size: 1em;
+}
+
+.google {
+    width: 25px;
+    height: 25px;
+}
+
+/*REGIsSTER*/
+header {
+    background-image: url(./images/header.png);
+    height: 15vh;
+    display: flex;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    ;
+}
+
+.statement {
+    font-size: 1.5em ;
+}
+.ClubMatch {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+}
+
+.divButtons {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2em 0;
+    flex-wrap: wrap
+}
+
+#OK,
+#back {
+    background-color: #DCB239;
+    text-decoration: none;
+    width: 100px;
+    height: 43px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    border: none;
+    margin: 0 0 1em 0;
+}
+#OK:hover {
+    background-color: #DF744A;
+}
+
+.hrefBack,
+.submitRegister {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+/* .loginPage {
     display: flex;
 }
 
@@ -127,7 +274,7 @@ a {
 }
 
 /* pag2 - Register*/
-header {
+/* header {
     position: absolute;
     width: 100%;
     background: rgba(220, 178, 57, 0.86);
@@ -221,4 +368,4 @@ top: 634px;
 background: #DCB239;
 border-radius: 10px;
 
-}
+} */ */
