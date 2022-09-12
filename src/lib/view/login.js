@@ -1,36 +1,36 @@
 import { loginWithGoogle } from "../authFirebase.js";
 export const login = () => {
 
- 
-    const divLogin = document.createElement('div');
-    divLogin.classList.add("loginPage");
-    
+
+  const divLogin = document.createElement('div');
+  divLogin.classList.add("loginPage");
+
   const viewlogin = `
     <div id= "containerLogo">
     <img class="logo" src="images/LogoClubMatch.png" />
     </div>
  `;
-    divLogin.innerHTML = viewlogin;
-    
+  divLogin.innerHTML = viewlogin;
+
   const divContainer = document.createElement("div");
   divContainer.classList.add("divContainer");
   divLogin.appendChild(divContainer);
 
-    
+
   /*imput de email*/
   const emailInput = document.createElement('input');
   emailInput.type = 'email'
   emailInput.classList.add("email");
   emailInput.placeholder = 'Email';
   divContainer.appendChild(emailInput);
-  
+
   /*imput de password*/
   const passwordInput = document.createElement('input');
   passwordInput.type = "password";
   passwordInput.classList.add("password");
   passwordInput.placeholder = 'Password';
-  divContainer.appendChild(passwordInput);  
-  
+  divContainer.appendChild(passwordInput);
+
   /*Parrafo de olvidaste tu contraseña*/
   const forgetPassword = document.createElement('p');
   forgetPassword.classList.add('forget');
@@ -82,15 +82,3 @@ export const login = () => {
 
   return divLogin;
 };
-
-
-
-
-
-
-/* <input type="email" name="email" id="email" placeholder="Email" />
-<input type="password" name="password" id="password" placeholder="Contraseña" />
-<p class="forget">¿Haz olvidado tú contraseña? Click <a class="hrefForget" href="#/">Aquí</a></p>
-<button type="button" name="login" id="login"><a href="#/posts">Iniciar</a></button>
-<p class="register">¿Aún no tienes cuenta? <a class="hrefRegister" href="#/register">Registrate</a></p>
-<button type="button" name="singUpGoogle" id="singUpGoogle"><img class="google" src="images/LogoGoogle.png" />Acceder con Google</button> */
