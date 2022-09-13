@@ -1,371 +1,179 @@
+/* * {
+  outline: 1px solid limegreen !important;
+ } */
 body {
-    background-color: #BFD8D2;
-    font-family: 'Asap', sans-serif;
-    margin: 0;
-    color: #1E3F48;
+  background-color: #BFD8D2;
+  font-family: "Asap", sans-serif;
+  margin: 0;
+  color: #1e3f48;
 }
 
 /*LOGIN*/
 /*LOGO*/
 #containerLogo {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .logo {
-    width: 60%;
-    height: 60%;
-    margin: 10% 0 0 0;
+  width: 60%;
+  height: 60%;
+  margin: 10% 0 0 0;
 }
 
 /*Container Login*/
 .divContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input,
 #signUpGoogle {
-    background-color: #FEDDCD;
-    width: 80%;
-    height: 4em;
-    margin: 2em 0 0 0;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
+  background-color: rgb(247 243 242);
+  width: 80%;
+  height: 4em;
+  margin: 2em 0 0 0;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 
 .forget {
-    margin-block-start: 10px;
+  margin-block-start: 10px;
 }
 .hrefForget,
 .hrefLogin,
 .hrefRegister {
-    text-decoration: none;
-    font-weight: bold;
-    color: #1E3F48;
+  text-decoration: none;
+  font-weight: bold;
+  color: #1e3f48;
 }
 
 .hrefForget:hover,
 .hrefRegister:hover {
-    color: white;
+  color: white;
 }
 
 .buttonLogin {
-    background-color: #DCB239;
-    text-decoration: none;
-    width: 100px;
-    height: 43px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    border: none;
-    margin: 0 0 0 50%;
+  background-color: #dcb239;
+  text-decoration: none;
+  width: 100px;
+  height: 43px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  margin: 0 0 0 50%;
 }
 .buttonLogin:hover {
-    background-color: #DF744A;
+  background-color: #df744a;
 }
 
 .hrefLogin {
-    color: white;
-    font-weight: bold;
-    font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 /*Botón Google*/
 #signUpGoogle {
-    background-color: white;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row-reverse;
-    font-size: 1em;
+  background-color: white;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  font-size: 1em;
 }
 
 .google {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }
 
 /*REGIsSTER*/
 header {
-    background-image: url(./images/header.png);
-    height: 15vh;
-    display: flex;
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
+  background-image: url(./images/header.png);
+  height: 15vh;
+  display: flex;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
 }
 
 h1 {
-    font-family: 'Pacifico', cursive;
-    ;
+  font-family: "Pacifico", cursive;
 }
 
 .statement {
-    font-size: 1.5em ;
+  font-size: 1.5em;
 }
 .ClubMatch {
-    margin: 0;
-    font-size: 2em;
-    font-weight: bold;
+  margin: 0;
+  font-size: 2em;
+  font-weight: bold;
 }
 .registerForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em;
 }
 
 .divButtons {
-    width: 80%;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 2em 0;
-    flex-wrap: wrap
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2em 0;
+  flex-wrap: wrap;
 }
 
 #OK,
 #back {
-    background-color: #DCB239;
-    text-decoration: none;
-    width: 100px;
-    height: 43px;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-    border-radius: 10px;
-    border: none;
-    margin: 0 0 1em 0;
+  background-color: #dcb239;
+  text-decoration: none;
+  width: 100px;
+  height: 43px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 10px;
+  border: none;
+  margin: 0 0 1em 0;
 }
 #OK:hover {
-    background-color: #DF744A;
+  background-color: #df744a;
 }
 
 .hrefBack,
 .submitRegister {
-    color: white;
-    font-weight: bold;
-    font-size: 1.5em;
-    text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-decoration: none;
 }
-/* .loginPage {
-    display: flex;
+@media (min-width:700px) {
+    .loginPage, 
+    .container{
+        width: 40%;
+        height: 40%;
+        margin: 0 auto;
+        border-radius: 5%;
+        background-color:#BFD8D2;
+    }
+    body {
+        background-image: url(http://www.psdahtmlpasoapaso.com/blog/wp-content/uploads/2016/05/preview.gif);
+
+    }
+    .forget,
+    .redirectionRegister{
+      font-size: 1.5em;
+
+    }
+    #signUpGoogle{
+      margin: -10px 0 20px 0;
+    }
+    header {
+      border-radius: 20px ;
+    }
 }
-
-.logo {
-    position: absolute;
-    width: 357px;
-    height: 363px;
-    left: -3px;
-    top: 10px;
-
-}
-
-#email {
-    box-sizing: border-box;
-    position: absolute;
-    width: 286px;
-    height: 63px;
-    left: 37px;
-    top: 384px;
-    background: #FEDDCD;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-
-#password {
-    box-sizing: border-box;
-    position: absolute;
-    width: 286px;
-    height: 63px;
-    left: 37px;
-    top: 494px;
-    background: #FEDDCD;
-    border: 1px solid #000000;
-    border-radius: 10px;
-}
-.forget{
-    position: absolute;
-    width: 357px;
-    height: 34px;
-    left: 2px;
-    top: 563px;
-    font-family: 'Asap';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 19px;
-    text-align: center;
-    color: #000000;
-}
-.hrefForget{
-    font-size: 19px;
-    line-height: 22px;
-    text-align: center;
-    text-decoration-line: underline;
-    color: #000AF8;
-}
-
-.buttonLogin {
-    position: absolute;
-    width: 100px;
-    height: 43px;
-    left: 223px;
-    top:  615px;
-    background: #DCB239;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-
-a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-.redirectionRegister {
-    position: absolute;
-    width: 358px;
-    height: 20px;
-    left: 2px;
-    top: 681px;
-    font-family: 'Asap';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 15px;
-    text-align: center;
-    color: #000000;
-  
-}
-
-.hrefRegister {
-    font-family: 'Asap';
-    font-style: normal;
-    font-size: 18px;
-    text-decoration-line: underline;
-    color: #000AF8;
-}
-
-#signUpGoogle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    position: absolute;
-    width: 285px;
-    height: 45px;
-    left: 40px;
-    top: 719px;
-    background: #FFFFFF;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    align-items: center;
-    margin: 3vh 0;
-}
-
-.google {
-    width: 35px;
-    height: 32px;
-
-}
-
-/* pag2 - Register*/
-/* header {
-    position: absolute;
-    width: 100%;
-    background: rgba(220, 178, 57, 0.86);
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-}
-
-.name {
-    box-sizing: border-box;
-    position: absolute;
-    width: 261px;
-    height: 35px;
-    left: 48px;
-    top: 176px;
-    background: #FEDDCD;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-
-
-.age {
-    box-sizing: border-box;
-    position: absolute;
-    width: 261px;
-    height: 35px;
-    left: 48px;
-    top: 260px;
-    background: #FEDDCD;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-
-
-
-.country {
-box-sizing: border-box;
-position: absolute;
-width: 261px;
-height: 35px;
-left: 48px;
-top: 344px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-}
-
-
-.email {
-    box-sizing: border-box;
-    position: absolute;
-    width: 261px;
-    height: 35px;
-    left: 51px;
-    top: 428px;
-    background: #FEDDCD;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-
-.password {
-    box-sizing: border-box;
-    position: absolute;
-    width: 261px;
-    height: 35px;
-    left: 48px;
-    top: 512px;
-    background: #FEDDCD;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-}
-
-#OK {
-    position: absolute;
-    width: 100px;
-    height: 43px;
-    left: 208px;
-    top: 634px;
-    background: #DCB239;
-    border-radius: 10px;
-}
-#back {
-position: absolute;
-width: 100px;
-height: 43px;
-left: 57px;
-top: 634px;
-background: #DCB239;
-border-radius: 10px;
-
-} */ */
