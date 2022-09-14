@@ -1,3 +1,6 @@
+/* * {
+  outline: 1px solid limegreen !important;
+ } */
 body {
   background-color: #BFD8D2;
   font-family: "Asap", sans-serif;
@@ -26,7 +29,7 @@ body {
 
 input,
 #signUpGoogle {
-  background-color: #feddcd;
+  background-color: rgb(247 243 242);
   width: 80%;
   height: 4em;
   margin: 2em 0 0 0;
@@ -155,12 +158,22 @@ h1 {
         width: 40%;
         height: 40%;
         margin: 0 auto;
+        border-radius: 5%;
         background-color:#BFD8D2;
     }
     body {
         background-image: url(http://www.psdahtmlpasoapaso.com/blog/wp-content/uploads/2016/05/preview.gif);
 
     }
-    
-    
+    .forget,
+    .redirectionRegister{
+      font-size: 1.5em;
+
+    }
+    #signUpGoogle{
+      margin: -10px 0 20px 0;
+    }
+    header {
+      border-radius: 20px ;
+    }
 }
