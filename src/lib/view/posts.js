@@ -5,7 +5,19 @@ export const posts = () => {
     const divPosts = document.createElement('div');
 
     const viewPosts = `
-        <h1>Este será el muro con los posts</h1>
+    <header class="header">
+    <h1 class="h1">Club Match</h1>
+
+    <button class="button">--
+    </button>
+
+    <nav class="nav">
+        <ul class="ul">
+            <li class="li"><a href="#" class="a">Perfil</a></li>
+            <li class="li"><a href="#" class="a">Cerrar sesion</a></li>
+        </ul>
+    </nav>
+  </header>
         
       `
       const signOutPosts = document.createElement('button');
