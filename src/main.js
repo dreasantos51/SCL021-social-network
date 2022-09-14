@@ -12,7 +12,7 @@ const init = () => {
     console.log(window.location.hash);
     changeRoute(window.location.hash);
   });
-   
+
 };
 
 window.addEventListener("load", init);
