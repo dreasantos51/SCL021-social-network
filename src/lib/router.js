@@ -28,7 +28,11 @@ const showView = (hash) => {
       containerRoot.appendChild(posts());
       break;
     case '#/login':
-       containerRoot.innerHTML = "";
+      containerRoot.innerHTML = "";
+      containerRoot.appendChild(login());
+      break;
+    case '#':
+      containerRoot.innerHTML = "";
       containerRoot.appendChild(login());
       break;
     default:

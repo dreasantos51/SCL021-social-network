@@ -39,7 +39,7 @@ export const login = () => {
 
   const hrefForget = document.createElement('a');
   hrefForget.classList.add('hrefForget');
-  hrefForget.innerText = ' Aqui'
+  hrefForget.innerText = ' Aquí'
   hrefForget.href = '#/'
   forgetPassword.appendChild(hrefForget);
 
@@ -50,26 +50,26 @@ export const login = () => {
 
   const hrefLogin = document.createElement('a');
   hrefLogin.classList.add('hrefLogin');
-  hrefLogin.innerText = 'Iniciar'
+  hrefLogin.innerText = 'Iniciar Sesión'
   hrefLogin.href = '#/posts'
   buttonLogin.appendChild(hrefLogin);
 
-  /*Parrafo "¿Aun no tienes cuenta?"*/
-  const redirectionRegister = document.createElement('p');
-  redirectionRegister.classList.add('redirectionRegister');
-  redirectionRegister.innerText = '¿Aún no tienes cuenta?'
-  divContainer.appendChild(redirectionRegister);
-
-  const hrefRegister = document.createElement('a');
-  hrefRegister.classList.add('hrefRegister');
-  hrefRegister.innerText = 'Registrate'
-  hrefRegister.href = '#/register'
-  redirectionRegister.appendChild(hrefRegister);
+  /*PROBANO --O-- */
+  const containerLines = document.createElement("div");
+  containerLines.id = "containerlines"
+  containerLines.innerHTML = ` 
+      <div class="line"></div>
+      <div class="space"></div>
+      <p id="o">o</p>
+      <div class="space"></div>
+     <div class="line"></div>
+      `
+  divContainer.appendChild(containerLines);
 
   /*Boton para abrir cuenta con google*/
   const buttonGoogle = document.createElement('button');
   buttonGoogle.id = 'signUpGoogle';
-  buttonGoogle.innerText = 'Acceder con Google'
+  buttonGoogle.innerText = 'Iniciar Sesión con Google'
   buttonGoogle.addEventListener("click", loginWithGoogle);
   divContainer.appendChild(buttonGoogle);
 
@@ -79,6 +79,17 @@ export const login = () => {
   imgButtonGoggle.classList.add('google');
   buttonGoogle.appendChild(imgButtonGoggle)
 
+  /*Parrafo "¿Aun no tienes cuenta?"*/
+  const redirectionRegister = document.createElement('p');
+  redirectionRegister.classList.add('redirectionRegister');
+  redirectionRegister.innerText = '¿Aún no tienes cuenta? '
+  divContainer.appendChild(redirectionRegister);
+
+  const hrefRegister = document.createElement('a');
+  hrefRegister.classList.add('hrefRegister');
+  hrefRegister.innerText = 'Registrate'
+  hrefRegister.href = '#/register'
+  redirectionRegister.appendChild(hrefRegister);
 
   return divLogin;
 };
