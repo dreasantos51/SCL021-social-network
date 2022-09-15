@@ -3,7 +3,7 @@ export const register = () => {
   divRegister.classList.add("container");
 
   const viewRegister = `
-      <header>
+      <header class="headerRegister">
       <h1 class="ClubMatch">CLUB MATCH</h1>
       </header>
       `;
