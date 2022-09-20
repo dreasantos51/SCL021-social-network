@@ -16,9 +16,17 @@ export const changeRoute = (hash) => {
 
 const showView = (hash) => {
   const containerRoot = document.getElementById('root');
-  containerRoot.appendChild(login());
+
 
   switch (hash) {
+    case '#':
+      containerRoot.innerHTML = "";
+      containerRoot.appendChild(login());
+      break;
+    case '#/login':
+      containerRoot.innerHTML = "";
+      containerRoot.appendChild(login());
+      break;
     case '#/register':
       containerRoot.innerHTML = "";
       containerRoot.appendChild(register());
@@ -26,14 +34,6 @@ const showView = (hash) => {
     case '#/posts':
       containerRoot.innerHTML = "";
       containerRoot.appendChild(posts());
-      break;
-    case '#/login':
-      containerRoot.innerHTML = "";
-      containerRoot.appendChild(login());
-      break;
-    case '#':
-      containerRoot.innerHTML = "";
-      containerRoot.appendChild(login());
       break;
     default:
       containerRoot.innerHTML = `<h2>No existe</<h2>`
