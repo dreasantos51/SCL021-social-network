@@ -1,26 +1,13 @@
 import { signOut } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { auth } from "../configFirebase.js";
+import { db } from "../configFirebase.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
+
 
 export const posts = () => {
   const divPosts = document.createElement('div');
   divPosts.classList.add("divPosts");
 
-  /*     const viewPosts = `
-      <header class="header">
-      <h1 class="h1">Club Match</h1>
-  
-      <button class="button">--
-      </button>
-  
-      <nav class="nav">
-          <ul class="ul">
-              <li class="li"><a href="#" class="a">Perfil</a></li>
-              <li class="li"><a href="#" class="a">Cerrar sesion</a></li>
-          </ul>
-      </nav>
-    </header>
-          
-        ` */
   /*Header y menu desplegable*/
   /*Header*/
   const headerPost = document.createElement('header');
@@ -60,7 +47,6 @@ export const posts = () => {
 
 
   const liSignOff = document.createElement('li');
-  liSignOff.innerText = "Cerrar Sesión";
   liSignOff.classList.add('liMenu');
   ulPosts.appendChild(liSignOff)
 
@@ -70,7 +56,7 @@ export const posts = () => {
   })
 
   const signOutPosts = document.createElement('button');
-  signOutPosts.innerText = "Cerrar jeje"
+  signOutPosts.innerText = "Cerrar Sesión"
   signOutPosts.addEventListener('click', function () {
     signOut(auth).then(() => {
       // Sign-out successful.
@@ -79,8 +65,51 @@ export const posts = () => {
     });
   })
     ;
-  /*     divPosts.innerHTML = viewPosts; */
-  divPosts.appendChild(signOutPosts);
+  liSignOff.appendChild(signOutPosts);
 
+/*Imput de Publicaciones*/
+const title = document.createElement('input');
+  title.type = "text"
+  title.classList.add("title");
+  title.placeholder = 'Titulo';
+  divPosts.appendChild(title);
+
+            
+  const description = document.createElement('input');
+  description.type = 'text'
+  description.classList.add("description");
+  description.placeholder = 'Publicación';
+  divPosts.appendChild(description);
+
+  
+  const link = document.createElement('input');
+  link.type = "text"
+  link.classList.add("link");
+  link.placeholder = 'Enlace';
+  divPosts.appendChild(link);
+
+  /*Boton Publicar*/
+  const buttonPost = document.createElement('button');
+  buttonPost.classList.add = 'buttonPost';
+  buttonPost.innerText = 'Publicar'
+  divPosts.appendChild(buttonPost);
+
+
+
+  buttonPost.addEventListener("click", async () => {
+    const docRef = await addDoc(collection(db, "post"), {
+        title: title.value,
+        description: description.value,
+       link: link.value,
+      });
+      console.log("Document written with ID: ", docRef.id);
+    })
+
+/*   const email = document.createElement('input');
+  description.type = 'email'
+  description.classList.add("email");
+  description.placeholder = 'Correo';
+  divPosts.appendChild(email);
+ */
   return divPosts;
 };
