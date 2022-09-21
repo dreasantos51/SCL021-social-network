@@ -170,7 +170,8 @@ h1 {
 }
 
 #OK,
-#back {
+#back,
+#buttonPost {
   background-color: #dcb239;
   text-decoration: none;
   width: 100px;
@@ -229,65 +230,132 @@ h1 {
   }
 }
 
+/*POSTS*/
+#bodyPosts {
+  background: rgba(254, 221, 205, 0.5);
+}
+
+#divProfile {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5em 0 2em 0;
+}
+
+#imageProfile {
+  border-radius: 50%;
+
+}
+
+#divCreatePost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.createPost {
+  padding: 20px;
+  margin: 0;
+  background: #FFFFFF;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#titlePost {
+  border-radius: 10px 10px 0 0;
+}
+
+#linkPost {
+  border-radius: 0 0 10px 10px;
+}
+
+.buttonPost {
+  width: 75px;
+  height: 37px;
+  background: #1E3F48;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  margin: 20px 0 0 200px;
+  border: none;
+}
+
 /*  Código de nuestro menu */
 
 .headerPost {
   background-color: #bfd8d2;
   width: 100%;
-  padding: 1em;
-
+  padding: 0 0.5em;
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 20%);
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
 }
+
 .clubMatchTitle {
-/*   background-color: aqua; */
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
 }
+
 .buttonMenu {
-/*   background-color: crimson; */
-  width: 2em;
-  height: 2em;
-  display: none;
+  /*   background-color: crimson; */
+  background-image: url(https://www.samueldiosdado.com/wp-content/uploads/2017/08/Men%C3%BA-hamburguesa-herramienta-practica-o-icono-inutil-624x522.png);
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: initial;
+  width: 50px;
+  height: 50px;
+  border: none;
 }
-.navPosts { 
-/*   background-color: bisque; */
+
+.navPosts {
+  /*   background-color: bisque; */
 }
+
 .ulPosts {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
   align-items: center;
 }
-.liMenu{
+
+.liMenu {
   margin: 0.5em;
   list-style: none;
 }
-.divPosts {
-  background-color: #feddcd;
-}
 
 .imgHeader {
-  width: 44px;
-  height: 44px;
+  width: 100px;
+  height: 100px;
 }
 
 @media screen and (max-width: 700px) {
 
-  .navPosts{
+  .navPosts {
     width: 100%;
     display: none;
   }
+
   .navPosts.active {
     display: block;
   }
+
   .buttonMenu {
     display: block;
     cursor: pointer;
   }
+
   .ulPosts {
     flex-direction: column;
   }
+
   .liMenu {
     margin: 1rem 0;
     list-style: none;
