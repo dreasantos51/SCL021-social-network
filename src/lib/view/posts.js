@@ -1,10 +1,16 @@
 import { signOut } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { auth } from "../configFirebase.js";
-import { db } from "../configFirebase.js";
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
-
+import { usuario } from "../../main.js";
+import { printPost, savePost } from "../fireStore.js";
 
 export const posts = () => {
+  const body = document.getElementsByTagName("body");
+  if (window.location.hash === "#/posts") {
+    console.log(body);
+    const bodyPosts = body[0];
+    bodyPosts.id = "bodyPosts";
+  }
+
   const divPosts = document.createElement('div');
   divPosts.classList.add("divPosts");
 
@@ -14,22 +20,23 @@ export const posts = () => {
   headerPost.classList.add('headerPost');
   divPosts.appendChild(headerPost);
 
-  /*Imagen de Header*/
-  const imgHeader = document.createElement('img');
-  imgHeader.src = "./images/manos.png"
-  imgHeader.classList.add('imgHeader');
-  headerPost.appendChild(imgHeader)
-
   /*Boton de menu "Hamburguesa"*/
+
   const buttonMenu = document.createElement('button');
   buttonMenu.classList.add('buttonMenu');
-  buttonMenu.innerHTML = "¡¡";
   headerPost.appendChild(buttonMenu);
+
 
   const clubMatchTitle = document.createElement("h1");
   clubMatchTitle.classList.add("clubMatchTitle")
   clubMatchTitle.innerText = "Club Match";
   headerPost.appendChild(clubMatchTitle);
+
+  /*Imagen de Header*/
+  const imgHeader = document.createElement('img');
+  imgHeader.src = "./images/LogoManos.png";
+  imgHeader.classList.add('imgHeader');
+  headerPost.appendChild(imgHeader)
 
   /*Nav */
   const navPosts = document.createElement("nav");
@@ -60,6 +67,9 @@ export const posts = () => {
   signOutPosts.addEventListener('click', function () {
     signOut(auth).then(() => {
       // Sign-out successful.
+      const bodyPosts = body[0];
+      bodyPosts.id = "bodyLogin";
+
     }).catch((error) => {
       // An error happened.
     });
@@ -67,49 +77,71 @@ export const posts = () => {
     ;
   liSignOff.appendChild(signOutPosts);
 
-/*Imput de Publicaciones*/
-const title = document.createElement('input');
-  title.type = "text"
-  title.classList.add("title");
-  title.placeholder = 'Titulo';
-  divPosts.appendChild(title);
+  /*Profile */
+  const divProfile = document.createElement("div");
+  divProfile.id = "divProfile";
+  divPosts.appendChild(divProfile);
 
-            
+  let imageUser = usuario.photoURL;
+  console.log(usuario);
+  console.log(usuario.photoURL);
+
+  const imageProfile = document.createElement("img");
+  imageProfile.id = "imageProfile";
+  imageProfile.src = imageUser;
+  divProfile.appendChild(imageProfile);
+
+  let userName = usuario.displayName;
+  const nameProfile = document.createElement("h2");
+  nameProfile.id = "nameProfile";
+  nameProfile.innerText = userName;
+  divProfile.appendChild(nameProfile);
+
+
+  /*Imput de Publicaciones*/
+  const divCreatePost = document.createElement("div");
+  divCreatePost.id = "divCreatePost";
+  divPosts.appendChild(divCreatePost);
+
+  const title = document.createElement('input');
+  title.type = "text"
+  title.classList.add("createPost");
+  title.id = "titlePost"
+  title.placeholder = 'Titulo';
+  divCreatePost.appendChild(title);
+
+
   const description = document.createElement('input');
   description.type = 'text'
-  description.classList.add("description");
-  description.placeholder = 'Publicación';
-  divPosts.appendChild(description);
+  description.classList.add("createPost");
+  description.placeholder = 'Actualiza tú pasatiempo, y haz Match!';
+  divCreatePost.appendChild(description);
 
-  
+
   const link = document.createElement('input');
   link.type = "text"
-  link.classList.add("link");
+  link.classList.add("createPost");
+  link.id = "linkPost"
   link.placeholder = 'Enlace';
-  divPosts.appendChild(link);
+  divCreatePost.appendChild(link);
 
   /*Boton Publicar*/
   const buttonPost = document.createElement('button');
-  buttonPost.classList.add = 'buttonPost';
+  buttonPost.classList.add("buttonPost");
   buttonPost.innerText = 'Publicar'
-  divPosts.appendChild(buttonPost);
+  divCreatePost.appendChild(buttonPost);
+
+
+  buttonPost.addEventListener("click", () => {
+    const titlePost = title.value;
+    const descriptionPost = description.value;
+    const linkPost = link.value;
+    savePost(titlePost, descriptionPost, linkPost);
+    printPost();
+  })
 
 
 
-  buttonPost.addEventListener("click", async () => {
-    const docRef = await addDoc(collection(db, "post"), {
-        title: title.value,
-        description: description.value,
-       link: link.value,
-      });
-      console.log("Document written with ID: ", docRef.id);
-    })
 
-/*   const email = document.createElement('input');
-  description.type = 'email'
-  description.classList.add("email");
-  description.placeholder = 'Correo';
-  divPosts.appendChild(email);
- */
   return divPosts;
 };
