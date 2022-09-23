@@ -98,7 +98,7 @@ export const posts = () => {
   divProfile.appendChild(nameProfile);
 
 
-  /*Imput de Publicaciones*/
+  /*Crear Post*/
   const divCreatePost = document.createElement("div");
   divCreatePost.id = "divCreatePost";
   divPosts.appendChild(divCreatePost);
@@ -125,20 +125,45 @@ export const posts = () => {
   link.placeholder = 'Enlace';
   divCreatePost.appendChild(link);
 
+ 
+  
+
   /*Boton Publicar*/
   const buttonPost = document.createElement('button');
   buttonPost.classList.add("buttonPost");
   buttonPost.innerText = 'Publicar'
   divCreatePost.appendChild(buttonPost);
 
-
+  let viewHtml = '';
   buttonPost.addEventListener("click", () => {
     const titlePost = title.value;
     const descriptionPost = description.value;
     const linkPost = link.value;
     savePost(titlePost, descriptionPost, linkPost);
-    printPost();
+    // console.log(printPost());
+    printPost().then((pagePost) => {
+      console.log(pagePost);
+      pagePost.forEach((e) => {
+        viewHtml += `<div id="containerPost">
+        <h1 id="userName">${e.name}</h1>
+        <h2 id="titleP">${e.title}</h2>
+        <p id="descriptionPost">${e.description}</p>
+        <p id="linkP">${e.link}</p>
+        </div>
+        `
+        
+      
+      })
+     const divPrintPost = document.createElement("div");
+  divPrintPost.id = "divPrintPost";
+  divPosts.appendChild(divPrintPost);
+  document.getElementById(divPrintPost).appendChild(viewHtml);
+
   })
+/*Imprimir Post*/
+  
+    });
+ 
 
 
 

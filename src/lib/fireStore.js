@@ -15,16 +15,18 @@ export const savePost = async (title, description, link) => {
     });
     console.log("Document written with ID: ", docRef.id);
 }
+let allPosts = []
 let data = {};
 export const printPost = async () => {
     const querySnapshot = await getDocs(collection(db, "Post"));
-    console.log(querySnapshot);
     querySnapshot.forEach((doc) => {
         // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-        data = doc.data();
+        allPosts.push({ ...doc.data(), id: doc.id });
+        
+        
 
     });
-    console.log(data);
+    
+    return allPosts;
 
 }
