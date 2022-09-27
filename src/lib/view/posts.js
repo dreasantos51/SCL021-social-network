@@ -64,6 +64,7 @@ export const posts = () => {
   });
 
   const signOutPosts = document.createElement("button");
+  signOutPosts.id = "logOut"
   signOutPosts.innerText = "Cerrar Sesión";
   signOutPosts.addEventListener("click", function () {
     signOut(auth)
@@ -113,6 +114,7 @@ export const posts = () => {
   const description = document.createElement("input");
   description.type = "text";
   description.classList.add("createPost");
+  description.id = "descriptionPost"
   description.placeholder = "Actualiza tú pasatiempo, y haz Match!";
   divCreatePost.appendChild(description);
 
@@ -138,11 +140,14 @@ export const posts = () => {
 
   showingPosts((post) => {
     let viewHtml = `<div id="containerPost">
+    <div id="userInfo">
+        <img id="userPhoto" src="${post.profileImg}"">
         <h1 id="userName">${post.name}</h1>
+      </div>
         <h2 id="titleP">${post.title}</h2>
         <p id="descriptionPost">${post.description}</p>
         <p id="linkP">${post.link}</p>
-        <img id="like" src="images/LogoManos.png"/>
+        <button id="buttonLike"><img id="imgBtnLike" src="images/LogoManos.png"/></button>
         </div>
         `;
     divPrintPost.innerHTML += viewHtml;
