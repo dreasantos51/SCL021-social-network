@@ -31,17 +31,6 @@ export const login = () => {
   passwordInput.placeholder = 'Password';
   divContainer.appendChild(passwordInput);
 
-  /*Parrafo de olvidaste tu contraseña*/
-  const forgetPassword = document.createElement('p');
-  forgetPassword.classList.add('forget');
-  forgetPassword.innerText = '¿Haz olvidado tú contraseña? Click'
-  divContainer.appendChild(forgetPassword);
-
-  const hrefForget = document.createElement('a');
-  hrefForget.classList.add('hrefForget');
-  hrefForget.innerText = ' Aquí'
-  hrefForget.href = '#/'
-  forgetPassword.appendChild(hrefForget);
 
   /*Boton de Iniciar*/
   const buttonLogin = document.createElement('button');
