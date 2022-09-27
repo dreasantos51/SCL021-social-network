@@ -1,6 +1,9 @@
-//login con google
 import { auth } from "./configFirebase.js"
-import { GoogleAuthProvider,  signInWithPopup} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+import { GoogleAuthProvider,  signInWithPopup, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+
+
+
+//login con google
 const provider = new GoogleAuthProvider(); 
 
 export let loginWithGoogle = () => {
@@ -25,4 +28,17 @@ export let loginWithGoogle = () => {
     // ...
   });
 }
-
+//crear el usuario
+export let loginWithEmail = () => {
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
+  }

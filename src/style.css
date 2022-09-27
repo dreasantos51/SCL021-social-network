@@ -69,6 +69,7 @@ input,
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
   border: none;
+  margin-top: 20px;
 }
 
 .buttonLogin:hover {
@@ -195,46 +196,19 @@ h1 {
   text-decoration: none;
 }
 
-@media (min-width: 700px) {
-  #root {
-    display: flex;
-    justify-content: center;
-  }
 
-  .loginPage,
-  .container {
-    margin: 0 auto;
-    border-radius: 5%;
-    background-color: rgba(191, 216, 210, 77%);
-  }
-
-  body {
-    background-image: url(https://payload.cargocollective.com/1/18/592058/14124816/HEADER.gif);
-    background-size: contain;
-    background-position: center;
-    background-blend-mode: screen;
-    padding: 30px;
-  }
-
-  .forget,
-  .redirectionRegister {
-    font-size: 1.5em;
-  }
-
-  #signUpGoogle {
-    margin: -10px 0 20px 0;
-  }
-
-  header {
-    border-radius: 20px;
-  }
-}
 
 /*POSTS*/
-#bodyPosts {
+/* #bodyPosts {
   background: rgba(254, 221, 205, 0.5);
-}
+} */
 
+.divPosts {
+  background-color: #feddcd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #divProfile {
   box-sizing: border-box;
   display: flex;
@@ -254,6 +228,7 @@ h1 {
   align-items: center;
   box-sizing: border-box;
   justify-content: center;
+  width: 70%;
 }
 
 .createPost {
@@ -283,27 +258,65 @@ h1 {
   border: none;
 }
 
+#divPrintPost {
+  width: 80%;
+}
+
 #containerPost {
   background: #FFFFFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  padding: 0 10px;
+  margin:25px 0 ;
+  box-sizing: content-box;
+  padding: 10px 10px;
 }
+
+#userInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* #userPhoto {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+} */
 
 #userName {
   font-size: 0.9em;
 }
 
 #titleP {
-  
+  margin-inline-start: 55px;
 }
+
+#descriptionPost,
+#linkP {
+  margin:10px 30px;
+
+}
+
 #linkP {
   color: blue;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);}
+  }
 
 #link {
   width: 50px;
   height: 50px;
+}
+
+#buttonLike {
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+
+#imgBtnLike {
+   width: 70px;
+  height: 70px;
+
 }
 
 /*  Código de nuestro menu */
@@ -327,7 +340,6 @@ h1 {
 }
 
 .buttonMenu {
-  /*   background-color: crimson; */
   background-image: url(https://www.samueldiosdado.com/wp-content/uploads/2017/08/Men%C3%BA-hamburguesa-herramienta-practica-o-icono-inutil-624x522.png);
   background-color: transparent;
   background-size: contain;
@@ -336,11 +348,9 @@ h1 {
   width: 50px;
   height: 50px;
   border: none;
+  display: none;
 }
 
-.navPosts {
-  /*   background-color: bisque; */
-}
 
 .ulPosts {
   display: flex;
@@ -353,10 +363,60 @@ h1 {
   margin: 0.5em;
   list-style: none;
 }
+#logOut{
+  background: none;
+  border: none;
+  color: #1e3f48;
+  font-family: "Asap", sans-serif;
+  font-size: 16px;
+}
 
 .imgHeader {
   width: 100px;
   height: 100px;
+}
+@media (min-width: 700px) {
+  #root {
+    display: flex;
+    justify-content: center;
+  }
+
+  .loginPage,
+  .container {
+    margin: 0 auto;
+    border-radius: 5%;
+    background-color: rgba(191, 216, 210, 77%);
+  }
+
+  body {
+    background-image: url(https://payload.cargocollective.com/1/18/592058/14124816/HEADER.gif);
+    background-size: contain;
+    background-position: center;
+    background-blend-mode: screen;
+    padding: 30px;
+  }
+  #bodyPosts {
+    background-image: url(https://payload.cargocollective.com/1/18/592058/14124816/HEADER.gif);
+    background-size: contain;
+    background-position: center;
+    background-blend-mode: screen;
+  }
+  .divPosts {
+    width: 100%;
+    background: #feddcdc9;
+  }
+  .forget,
+  .redirectionRegister {
+    font-size: 1.5em;
+  }
+
+  #signUpGoogle {
+    margin: -10px 0 20px 0;
+  }
+
+  header {
+    border-radius: 20px;
+  }
 }
 
 @media screen and (max-width: 700px) {
