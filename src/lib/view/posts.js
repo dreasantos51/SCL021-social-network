@@ -1,7 +1,8 @@
 import { signOut } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { auth } from "../configFirebase.js";
 import { usuario } from "../../main.js";
-import { printPost, savePost } from "../fireStore.js";
+import { printPrueba, savePost } from "../fireStore.js";
+import { async } from "regenerator-runtime";
 
 export const posts = () => {
 	const body = document.getElementsByTagName("body");
@@ -134,11 +135,21 @@ export const posts = () => {
 		title.value = "";
 		description.value = "";
 		link.value = "";
-		// console.log(printPost());
-		printPost().then((pagePost) => {
-			console.log(pagePost);
-			pagePost.forEach((e) => {
-				viewHtml += `<div id="containerPost">
+		console.log(printPrueba());
+		});
+
+	return divPosts;
+};
+// mostrar post en la vista
+export const mostrarPost = async () => {
+		const divPrintPost = document.createElement("div");
+			divPrintPost.id = "divPrintPost";
+		 	// divPrintPost.innerHTML = viewHtml;
+	divPosts.appendChild(divPrintPost);
+	printPrueba((post) => {
+		divPrintPost.innerHTML = "";
+		post.forEach((e) => {
+		const viewHtml = `<div id="containerPost">
         <h1 id="userName">${e.name}</h1>
         <h2 id="titleP">${e.title}</h2>
         <p id="descriptionPost">${e.description}</p>
@@ -146,14 +157,17 @@ export const posts = () => {
         <img id="like" src="images/LogoManos.png"/>
         </div>
         `;
+			divPrintPost.innerHTML += viewHtml;
 			});
-			const divPrintPost = document.createElement("div");
-			divPrintPost.id = "divPrintPost";
-			divPrintPost.innerHTML = viewHtml;
-			divPosts.appendChild(divPrintPost);
-		});
-		/*Imprimir Post*/
-	});
+		})
+	}
+	
+		
 
-	return divPosts;
-};
+		// printPost().then((pagePost) => {
+		// 	console.log(pagePost);
+		// 	pagePost.forEach((e) => {
+				
+		// 
+		/*Imprimir Post*/
+	

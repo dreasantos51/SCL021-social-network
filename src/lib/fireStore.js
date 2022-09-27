@@ -2,7 +2,7 @@ import {
     db,
     auth
 } from "./configFirebase.js";
-import { collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
+import { collection, addDoc, onSnapshot,query, where } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
 
 // Add a new document with a generated id.
 export const savePost = async (title, description, link) => {
@@ -15,18 +15,18 @@ export const savePost = async (title, description, link) => {
     });
     console.log("Document written with ID: ", docRef.id);
 }
-let allPosts = []
-let data = {};
-export const printPost = async () => {
-    const querySnapshot = await getDocs(collection(db, "Post"));
-    querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        allPosts.push({ ...doc.data(), id: doc.id });
-        
-        
 
-    });
-    
-    return allPosts;
-
+// const q = query(collection(db, "Post"));
+// const unsubscribe = onSnapshot(q, (querySnapshot) => {
+//   const post = [];
+//   querySnapshot.forEach((doc) => {
+//       post.push(doc.data().title);
+//   });
+//   console.log("Hola probando", post.join(", "));
+// });
+export const printPrueba = (callback) => {
+    const showPost = query(collection(db, "Post"));
+    onSnapshot(showPost, callback);
+  
 }
+ //console.log(printPrueba, showPost)
