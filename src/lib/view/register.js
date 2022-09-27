@@ -1,3 +1,4 @@
+import { loginWithEmail } from "../authFirebase.js";
 export const register = () => {
   const divRegister = document.createElement('div');
   divRegister.classList.add("container");
@@ -74,6 +75,13 @@ export const register = () => {
   submitRegister.innerText = 'Iniciar'
   submitRegister.href = '#/posts'
   buttonRegister.appendChild(submitRegister);
+
+  buttonRegister.addEventListener('submit', (e) => {
+		e.preventDefault();
+		const email = emailRegister.value;  
+		const password = passwordRegister.value;
+		loginWithEmail(email, password);
+	}); 
 
 
   // button type="button" name="back" id="back"><a href="#/login">Atras</a></button>
