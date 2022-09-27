@@ -147,7 +147,6 @@ export const posts = () => {
         `;
     divPrintPost.innerHTML += viewHtml;
     divPosts.appendChild(divPrintPost);
-
   });
 
   return divPosts;
