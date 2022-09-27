@@ -1,159 +1,154 @@
 import { signOut } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { auth } from "../configFirebase.js";
 import { usuario } from "../../main.js";
-import { printPost, savePost } from "../fireStore.js";
+import { showingPosts } from "../fireStore.js";
+import { savingPost } from "../index.js";
 
 export const posts = () => {
-	const body = document.getElementsByTagName("body");
-	if (window.location.hash === "#/posts") {
-		console.log(body);
-		const bodyPosts = body[0];
-		bodyPosts.id = "bodyPosts";
-	}
 
-	const divPosts = document.createElement("div");
-	divPosts.classList.add("divPosts");
 
-	/*Header y menu desplegable*/
-	/*Header*/
-	const headerPost = document.createElement("header");
-	headerPost.classList.add("headerPost");
-	divPosts.appendChild(headerPost);
 
-	/*Boton de menu "Hamburguesa"*/
+  const body = document.getElementsByTagName("body");
+  if (window.location.hash === "#/posts") {
+    console.log(body);
+    const bodyPosts = body[0];
+    bodyPosts.id = "bodyPosts";
+  }
 
-	const buttonMenu = document.createElement("button");
-	buttonMenu.classList.add("buttonMenu");
-	headerPost.appendChild(buttonMenu);
+  const divPosts = document.createElement("div");
+  divPosts.classList.add("divPosts");
 
-	const clubMatchTitle = document.createElement("h1");
-	clubMatchTitle.classList.add("clubMatchTitle");
-	clubMatchTitle.innerText = "Club Match";
-	headerPost.appendChild(clubMatchTitle);
+  /*Header y menu desplegable*/
+  /*Header*/
+  const headerPost = document.createElement("header");
+  headerPost.classList.add("headerPost");
+  divPosts.appendChild(headerPost);
 
-	/*Imagen de Header*/
-	const imgHeader = document.createElement("img");
-	imgHeader.src = "./images/LogoManos.png";
-	imgHeader.classList.add("imgHeader");
-	headerPost.appendChild(imgHeader);
+  /*Boton de menu "Hamburguesa"*/
 
-	/*Nav */
-	const navPosts = document.createElement("nav");
-	navPosts.classList.add("navPosts");
-	headerPost.appendChild(navPosts);
+  const buttonMenu = document.createElement("button");
+  buttonMenu.classList.add("buttonMenu");
+  headerPost.appendChild(buttonMenu);
 
-	const ulPosts = document.createElement("ul");
-	ulPosts.classList.add("ulPosts");
-	navPosts.appendChild(ulPosts);
+  const clubMatchTitle = document.createElement("h1");
+  clubMatchTitle.classList.add("clubMatchTitle");
+  clubMatchTitle.innerText = "Club Match";
+  headerPost.appendChild(clubMatchTitle);
 
-	const liProfile = document.createElement("li");
-	liProfile.classList.add("liMenu");
-	liProfile.innerText = "Perfil";
-	ulPosts.appendChild(liProfile);
+  /*Imagen de Header*/
+  const imgHeader = document.createElement("img");
+  imgHeader.src = "./images/LogoManos.png";
+  imgHeader.classList.add("imgHeader");
+  headerPost.appendChild(imgHeader);
 
-	const liSignOff = document.createElement("li");
-	liSignOff.classList.add("liMenu");
-	ulPosts.appendChild(liSignOff);
+  /*Nav */
+  const navPosts = document.createElement("nav");
+  navPosts.classList.add("navPosts");
+  headerPost.appendChild(navPosts);
 
-	buttonMenu.addEventListener("click", () => {
-		navPosts.classList.toggle("active");
-	});
+  const ulPosts = document.createElement("ul");
+  ulPosts.classList.add("ulPosts");
+  navPosts.appendChild(ulPosts);
 
-	const signOutPosts = document.createElement("button");
-	signOutPosts.innerText = "Cerrar Sesión";
-	signOutPosts.addEventListener("click", function () {
-		signOut(auth)
-			.then(() => {
-				// Sign-out successful.
-				const bodyPosts = body[0];
-				bodyPosts.id = "bodyLogin";
-			})
-			.catch((error) => {
-				// An error happened.
-			});
-	});
-	liSignOff.appendChild(signOutPosts);
+  const liProfile = document.createElement("li");
+  liProfile.classList.add("liMenu");
+  liProfile.innerText = "Perfil";
+  ulPosts.appendChild(liProfile);
 
-	/*Profile */
-	const divProfile = document.createElement("div");
-	divProfile.id = "divProfile";
-	divPosts.appendChild(divProfile);
+  const liSignOff = document.createElement("li");
+  liSignOff.classList.add("liMenu");
+  ulPosts.appendChild(liSignOff);
 
-	let imageUser = usuario.photoURL;
-	console.log(usuario);
-	console.log(usuario.photoURL);
+  buttonMenu.addEventListener("click", () => {
+    navPosts.classList.toggle("active");
+  });
 
-	const imageProfile = document.createElement("img");
-	imageProfile.id = "imageProfile";
-	imageProfile.src = imageUser;
-	divProfile.appendChild(imageProfile);
+  const signOutPosts = document.createElement("button");
+  signOutPosts.innerText = "Cerrar Sesión";
+  signOutPosts.addEventListener("click", function () {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        const bodyPosts = body[0];
+        bodyPosts.id = "bodyLogin";
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  });
+  liSignOff.appendChild(signOutPosts);
 
-	let userName = usuario.displayName;
-	const nameProfile = document.createElement("h2");
-	nameProfile.id = "nameProfile";
-	nameProfile.innerText = userName;
-	divProfile.appendChild(nameProfile);
+  /*Profile */
+  const divProfile = document.createElement("div");
+  divProfile.id = "divProfile";
+  divPosts.appendChild(divProfile);
 
-	/*Crear Post*/
-	const divCreatePost = document.createElement("div");
-	divCreatePost.id = "divCreatePost";
-	divPosts.appendChild(divCreatePost);
+  let imageUser = usuario.photoURL;
+  console.log(usuario);
+  console.log(usuario.photoURL);
 
-	const title = document.createElement("input");
-	title.type = "text";
-	title.classList.add("createPost");
-	title.id = "titlePost";
-	title.placeholder = "Titulo";
-	divCreatePost.appendChild(title);
+  const imageProfile = document.createElement("img");
+  imageProfile.id = "imageProfile";
+  imageProfile.src = imageUser;
+  divProfile.appendChild(imageProfile);
 
-	const description = document.createElement("input");
-	description.type = "text";
-	description.classList.add("createPost");
-	description.placeholder = "Actualiza tú pasatiempo, y haz Match!";
-	divCreatePost.appendChild(description);
+  let userName = usuario.displayName;
+  const nameProfile = document.createElement("h2");
+  nameProfile.id = "nameProfile";
+  nameProfile.innerText = userName;
+  divProfile.appendChild(nameProfile);
 
-	const link = document.createElement("input");
-	link.type = "text";
-	link.classList.add("createPost");
-	link.id = "linkPost";
-	link.placeholder = "Enlace";
-	divCreatePost.appendChild(link);
+  /*Crear Post*/
+  const divCreatePost = document.createElement("div");
+  divCreatePost.id = "divCreatePost";
+  divPosts.appendChild(divCreatePost);
 
-	/*Boton Publicar*/
-	const buttonPost = document.createElement("button");
-	buttonPost.classList.add("buttonPost");
-	buttonPost.innerText = "Publicar";
-	divCreatePost.appendChild(buttonPost);
+  const title = document.createElement("input");
+  title.type = "text";
+  title.classList.add("createPost");
+  title.id = "titlePost";
+  title.placeholder = "Titulo";
+  divCreatePost.appendChild(title);
 
-	let viewHtml = "";
-	buttonPost.addEventListener("click", () => {
-		const titlePost = title.value;
-		const descriptionPost = description.value;
-		const linkPost = link.value;
-		savePost(titlePost, descriptionPost, linkPost);
-		title.value = "";
-		description.value = "";
-		link.value = "";
-		// console.log(printPost());
-		printPost().then((pagePost) => {
-			console.log(pagePost);
-			pagePost.forEach((e) => {
-				viewHtml += `<div id="containerPost">
-        <h1 id="userName">${e.name}</h1>
-        <h2 id="titleP">${e.title}</h2>
-        <p id="descriptionPost">${e.description}</p>
-        <p id="linkP">${e.link}</p>
+  const description = document.createElement("input");
+  description.type = "text";
+  description.classList.add("createPost");
+  description.placeholder = "Actualiza tú pasatiempo, y haz Match!";
+  divCreatePost.appendChild(description);
+
+  const link = document.createElement("input");
+  link.type = "text";
+  link.classList.add("createPost");
+  link.id = "linkPost";
+  link.placeholder = "Enlace";
+  divCreatePost.appendChild(link);
+
+  /*Boton Publicar*/
+  const buttonPost = document.createElement("button");
+  buttonPost.classList.add("buttonPost");
+  buttonPost.innerText = "Publicar";
+  divCreatePost.appendChild(buttonPost);
+
+  buttonPost.addEventListener("click", savingPost);
+
+  /*Imprimir Posts*/
+
+  const divPrintPost = document.createElement("div");
+  divPrintPost.id = "divPrintPost"
+
+  showingPosts((post) => {
+    let viewHtml = `<div id="containerPost">
+        <h1 id="userName">${post.name}</h1>
+        <h2 id="titleP">${post.title}</h2>
+        <p id="descriptionPost">${post.description}</p>
+        <p id="linkP">${post.link}</p>
         <img id="like" src="images/LogoManos.png"/>
         </div>
         `;
-			});
-			const divPrintPost = document.createElement("div");
-			divPrintPost.id = "divPrintPost";
-			divPrintPost.innerHTML = viewHtml;
-			divPosts.appendChild(divPrintPost);
-		});
-		/*Imprimir Post*/
-	});
+    divPrintPost.innerHTML += viewHtml;
+    divPosts.appendChild(divPrintPost);
 
-	return divPosts;
+  });
+
+  return divPosts;
 };
