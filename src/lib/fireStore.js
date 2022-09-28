@@ -8,7 +8,7 @@ import { collection, addDoc, onSnapshot, query } from "https://www.gstatic.com/f
 export const savePost = async (title, description, link) => {
     const docRef = await addDoc(collection(db, "Post"), {
         uid: auth.currentUser.uid,
-        name: auth.currentUser.displayName,
+        name: auth.currentUser.displayName != null ? auth.currentUser.displayName : auth.currentUser.email,
         title: title,
         description: description,
         link: link,
