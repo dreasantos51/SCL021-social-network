@@ -1,4 +1,4 @@
-import { loginWithEmail } from "../authFirebase.js";
+import { registerWithEmail } from "../authFirebase.js";
 
 export const register = () => {
   const divRegister = document.createElement('div');
@@ -81,7 +81,7 @@ export const register = () => {
     console.log(password)
     const displayName = nameRegister.value;
     console.log(displayName)
-    loginWithEmail(email, password, displayName);
+    registerWithEmail(email, password, displayName);
 
   });
 

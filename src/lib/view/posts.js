@@ -90,13 +90,13 @@ export const posts = () => {
 
   const imageProfile = document.createElement("img");
   imageProfile.id = "imageProfile";
-  imageProfile.src = imageUser;
+  imageProfile.src = imageUser != null ? imageUser : "./images/LogoClubMatch.png"
   divProfile.appendChild(imageProfile);
 
   let userName = usuario.displayName;
   const nameProfile = document.createElement("h2");
   nameProfile.id = "nameProfile";
-  nameProfile.innerText = userName;
+  nameProfile.innerText = userName != null ? userName : auth.currentUser.email;
   divProfile.appendChild(nameProfile);
 
   /*Crear Post*/
