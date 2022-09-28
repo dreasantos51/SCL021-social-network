@@ -1,4 +1,5 @@
-import { loginWithGoogle } from "../authFirebase.js";
+import { loginWithEmail, loginWithGoogle } from "../authFirebase.js";
+
 export const login = () => {
 
 
@@ -37,11 +38,17 @@ export const login = () => {
   buttonLogin.classList.add('buttonLogin');
   divContainer.appendChild(buttonLogin);
 
-  const hrefLogin = document.createElement('a');
-  hrefLogin.classList.add('hrefLogin');
-  hrefLogin.innerText = 'Iniciar Sesión'
-  hrefLogin.href = '#/posts'
-  buttonLogin.appendChild(hrefLogin);
+  buttonLogin.addEventListener("click", () => {
+    const emailLogin = emailInput.value;
+    const passwordLogin = passwordInput.value;
+    loginWithEmail(emailLogin, passwordLogin);
+  })
+
+  // const hrefLogin = document.createElement('a');
+  // hrefLogin.classList.add('hrefLogin');
+  // hrefLogin.innerText = 'Iniciar Sesión'
+  // hrefLogin.href = '#/posts'
+  // buttonLogin.appendChild(hrefLogin);
 
   /*PROBANO --O-- */
   const containerLines = document.createElement("div");
@@ -80,9 +87,6 @@ export const login = () => {
   hrefRegister.href = '#/register'
   redirectionRegister.appendChild(hrefRegister);
 
-  const pruebausuario = document.createElement('button');
-  pruebausuario.id = 'pruebausuario';
-  divContainer.appendChild(pruebausuario);
 
   return divLogin;
 };

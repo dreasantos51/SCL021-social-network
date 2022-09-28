@@ -1,5 +1,5 @@
 import { auth } from "./configFirebase.js"
-import { GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+import { GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 
 
 
@@ -29,7 +29,7 @@ export let loginWithGoogle = () => {
     });
 }
 //crear el usuario
-export let loginWithEmail = (email, password, displayName) => {
+export let registerWithEmail = (email, password, displayName) => {
   createUserWithEmailAndPassword(auth, email, password, displayName)
     .then((userCredential) => {
       console.log("prueba")
@@ -43,5 +43,22 @@ export let loginWithEmail = (email, password, displayName) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
+    });
+}
+
+//Login con email y contraseña
+export let loginWithEmail = (email, password) => {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      console.log("Noerror")
+      // Signed in
+      const user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      alert("El usuario no existe")
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
     });
 }
