@@ -20,7 +20,7 @@ export const showingPosts = (callback) => {
     onSnapshot(query(collection(db, "Post")), (docs) => {
         docs.forEach(doc => {
             callback(doc.data())
-            console.log(doc.data())
+            //console.log(doc.data())
         })
     })
 
