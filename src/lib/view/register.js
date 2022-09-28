@@ -1,6 +1,8 @@
 import { registerWithEmail } from "../authFirebase.js";
 
+/*Se crea funcion register que renderiza segun #/Register */
 export const register = () => {
+  /* div que contiene toda la estructura de la vista Register */
   const divRegister = document.createElement('div');
   divRegister.classList.add("container");
 
@@ -13,7 +15,7 @@ export const register = () => {
   divRegister.innerHTML = viewRegister;
 
 
-  /*crear formulario*/
+  /*Se crea formulario de registro*/
 
   const registerForm = document.createElement('form');
   registerForm.classList.add('registerForm');
@@ -24,35 +26,35 @@ export const register = () => {
   statement.innerText = "Ingresa tus datos para crear una cuenta";
   registerForm.appendChild(statement);
 
-  /*   <input type="text" class="name" placeholder="Nombre"> */
+  /*Input Nombre*/
   const nameRegister = document.createElement('input');
   nameRegister.type = "text"
   nameRegister.classList.add("name");
   nameRegister.placeholder = 'Nombre';
   registerForm.appendChild(nameRegister);
 
-  // <input type="text" class="age" placeholder="Edad">              
+  /*Input Edad*/
   const ageRegister = document.createElement('input');
   ageRegister.type = 'number'
   ageRegister.classList.add("age");
   ageRegister.placeholder = 'Edad';
   registerForm.appendChild(ageRegister);
 
-  /* <input type="text" class="country" placeholder="País"> */
+  /* Input País */
   const countryRegister = document.createElement('input');
   countryRegister.type = "text"
   countryRegister.classList.add("country");
   countryRegister.placeholder = 'País';
   registerForm.appendChild(countryRegister);
 
-  // <input type="email" class="email" placeholder="Email">
+  /*Input Email*/
   const emailRegister = document.createElement('input');
   emailRegister.type = "email"
   emailRegister.classList.add("email");
   emailRegister.placeholder = 'Email';
   registerForm.appendChild(emailRegister);
 
-  /* <input type="password" class="password" placeholder="Contraseña"> */
+  /*Input Password*/
   const passwordRegister = document.createElement('input');
   passwordRegister.type = "password";
   passwordRegister.classList.add("password");
@@ -64,7 +66,7 @@ export const register = () => {
   divButtons.classList.add('divButtons');
   registerForm.appendChild(divButtons);
 
-  //<button type="button" name="OK" id="OK"><a href="#/login">Registrarse</a></button> */
+  /*Botón para Iniciar sesión luego de registrarse*/
   const buttonRegister = document.createElement('button');
   buttonRegister.id = 'OK';
   buttonRegister.type = "submit";
@@ -72,21 +74,21 @@ export const register = () => {
   buttonRegister.innerText = 'Iniciar'
   divButtons.appendChild(buttonRegister);
 
-
-  registerForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+  //evento que escucha cuando se envia la información del formulario, y se guarda dentro de las variables
+  registerForm.addEventListener('submit', () => {
     const email = emailRegister.value;
     console.log(email)
     const password = passwordRegister.value;
     console.log(password)
     const displayName = nameRegister.value;
     console.log(displayName)
-    registerWithEmail(email, password, displayName);
+    //Función que guarda los datos del registro en firebase
+    registerWithEmail(email, password, displayName);//se pasan variables guardadas como argumentos
 
   });
 
 
-  // button type="button" name="back" id="back"><a href="#/login">Atras</a></button>
+  //Botón para vovler atrás
   const buttonBack = document.createElement('button');
   buttonBack.id = 'back';
   divButtons.appendChild(buttonBack);

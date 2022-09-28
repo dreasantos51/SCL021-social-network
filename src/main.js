@@ -1,23 +1,24 @@
-import { changeRoute } from "./lib/router.js";
-import { login } from "./lib/view/login.js";
-import { register } from "./lib/view/register.js";
+import { showView } from "./lib/router.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { auth } from "./lib/configFirebase.js";
 
+
+// variable que guarda la información del usuario cuando esta logeado
 export let usuario = {};
 
+//Función que escucha cuando cambia la ruta, y corre la funcion showView para renderizar según el hash
 const init = () => {
-  //document.getElementById("root").appendChild(login());
   window.addEventListener("hashchange", () => {
     console.log(window.location.hash);
-    changeRoute(window.location.hash);
+    showView(window.location.hash);
   });
 
 };
-
+// evento que escucha cuando la ventana se carga y corre la funcion init
 window.addEventListener("load", init);
 
-
+//Obversador de Firebase, cuando el usuario está logeado redirige a la vista de Posts,
+//cuando el usuario no está logeado redirige a la vista login
 onAuthStateChanged(auth, (user) => {
   if (user) {
     usuario = user;
@@ -25,10 +26,10 @@ onAuthStateChanged(auth, (user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
     console.log("estoy logeado", user)
-    changeRoute("#/posts");
+    showView("#/posts");
     window.location.hash = "#/posts";
   } else {
-    changeRoute("#/login");
+    showView("#/login");
     window.location.hash = "#/login";
     // User is signed out
     // ...
@@ -36,18 +37,3 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-// const user = auth.currentUser;
-
-// export const pruebauser = () => {
-//   console.log("hola")
-//   if (user !== null) {
-//     user.providerData.forEach((profile) => {
-//       console.log("Sign-in provider: " + profile.providerId);
-//       console.log("  Provider-specific UID: " + profile.uid);
-//       console.log("  Name: " + profile.displayName);
-//       console.log("  Email: " + profile.email);
-//       console.log("  Photo URL: " + profile.photoURL);
-//     });
-//   }
-
-// }

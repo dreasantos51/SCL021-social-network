@@ -1,13 +1,6 @@
-// aqui exportaras las funciones que necesites
-
 import { savePost } from "./fireStore.js";
 
-export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
-};
-
-//---------- Función para Guardar Posts ----------
+//Función para Guardar Posts según la información escrita en los input 
 export const savingPost = () => {
   const titlePost = document.getElementById("titlePost").value;
   const descriptionPost = document.getElementById("descriptionPost").value;
