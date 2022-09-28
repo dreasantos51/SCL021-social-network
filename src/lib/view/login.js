@@ -80,5 +80,9 @@ export const login = () => {
   hrefRegister.href = '#/register'
   redirectionRegister.appendChild(hrefRegister);
 
+  const pruebausuario = document.createElement('button');
+  pruebausuario.id = 'pruebausuario';
+  divContainer.appendChild(pruebausuario);
+
   return divLogin;
 };

@@ -181,6 +181,9 @@ h1 {
   border-radius: 10px;
   border: none;
   margin: 0 0 1em 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
 #OK:hover,
@@ -188,11 +191,9 @@ h1 {
   background-color: #df744a;
 }
 
-.hrefBack,
-.submitRegister {
+.hrefBack {
   color: white;
   font-weight: bold;
-  font-size: 1.5em;
   text-decoration: none;
 }
 
@@ -209,6 +210,7 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
+
 #divProfile {
   box-sizing: border-box;
   display: flex;
@@ -266,7 +268,7 @@ h1 {
   background: #FFFFFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  margin:25px 0 ;
+  margin: 25px 0;
   box-sizing: content-box;
   padding: 10px 10px;
 }
@@ -293,13 +295,13 @@ h1 {
 
 #descriptionPost,
 #linkP {
-  margin:10px 30px;
+  margin: 10px 30px;
 
 }
 
 #linkP {
   color: blue;
-  }
+}
 
 #link {
   width: 50px;
@@ -314,7 +316,7 @@ h1 {
 }
 
 #imgBtnLike {
-   width: 70px;
+  width: 70px;
   height: 70px;
 
 }
@@ -363,7 +365,8 @@ h1 {
   margin: 0.5em;
   list-style: none;
 }
-#logOut{
+
+#logOut {
   background: none;
   border: none;
   color: #1e3f48;
@@ -375,6 +378,7 @@ h1 {
   width: 100px;
   height: 100px;
 }
+
 @media (min-width: 700px) {
   #root {
     display: flex;
@@ -395,16 +399,19 @@ h1 {
     background-blend-mode: screen;
     padding: 30px;
   }
+
   #bodyPosts {
     background-image: url(https://payload.cargocollective.com/1/18/592058/14124816/HEADER.gif);
     background-size: contain;
     background-position: center;
     background-blend-mode: screen;
   }
+
   .divPosts {
     width: 100%;
     background: #feddcdc9;
   }
+
   .forget,
   .redirectionRegister {
     font-size: 1.5em;

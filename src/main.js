@@ -24,6 +24,7 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
     const uid = user.uid;
+    console.log("estoy logeado", user)
     changeRoute("#/posts");
     window.location.hash = "#/posts";
   } else {
@@ -35,3 +36,18 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+// const user = auth.currentUser;
+
+// export const pruebauser = () => {
+//   console.log("hola")
+//   if (user !== null) {
+//     user.providerData.forEach((profile) => {
+//       console.log("Sign-in provider: " + profile.providerId);
+//       console.log("  Provider-specific UID: " + profile.uid);
+//       console.log("  Name: " + profile.displayName);
+//       console.log("  Email: " + profile.email);
+//       console.log("  Photo URL: " + profile.photoURL);
+//     });
+//   }
+
+// }

@@ -10,7 +10,7 @@ export const posts = () => {
 
   const body = document.getElementsByTagName("body");
   if (window.location.hash === "#/posts") {
-    console.log(body);
+    //console.log(body);
     const bodyPosts = body[0];
     bodyPosts.id = "bodyPosts";
   }
@@ -141,7 +141,6 @@ export const posts = () => {
   showingPosts((post) => {
     let viewHtml = `<div id="containerPost">
     <div id="userInfo">
-        <img id="userPhoto" src="${post.profileImg}"">
         <h1 id="userName">${post.name}</h1>
       </div>
         <h2 id="titleP">${post.title}</h2>
