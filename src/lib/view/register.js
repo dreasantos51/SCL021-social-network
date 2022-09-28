@@ -1,4 +1,5 @@
 import { loginWithEmail } from "../authFirebase.js";
+
 export const register = () => {
   const divRegister = document.createElement('div');
   divRegister.classList.add("container");
@@ -66,22 +67,23 @@ export const register = () => {
   //<button type="button" name="OK" id="OK"><a href="#/login">Registrarse</a></button> */
   const buttonRegister = document.createElement('button');
   buttonRegister.id = 'OK';
+  buttonRegister.type = "submit";
+  buttonRegister.val = "submit";
+  buttonRegister.innerText = 'Iniciar'
   divButtons.appendChild(buttonRegister);
 
-  const submitRegister = document.createElement('a');
-  submitRegister.classList.add('submitRegister');
-  submitRegister.type = "submit";
-  submitRegister.val = "submit";
-  submitRegister.innerText = 'Iniciar'
-  submitRegister.href = '#/posts'
-  buttonRegister.appendChild(submitRegister);
 
-  buttonRegister.addEventListener('submit', (e) => {
-		e.preventDefault();
-		const email = emailRegister.value;  
-		const password = passwordRegister.value;
-		loginWithEmail(email, password);
-	}); 
+  registerForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = emailRegister.value;
+    console.log(email)
+    const password = passwordRegister.value;
+    console.log(password)
+    const displayName = nameRegister.value;
+    console.log(displayName)
+    loginWithEmail(email, password, displayName);
+
+  });
 
 
   // button type="button" name="back" id="back"><a href="#/login">Atras</a></button>
@@ -94,6 +96,7 @@ export const register = () => {
   hrefBack.innerText = 'Atras'
   hrefBack.href = '#/login'
   buttonBack.appendChild(hrefBack);
+
 
   return divRegister;
 };
