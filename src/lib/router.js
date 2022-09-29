@@ -2,22 +2,9 @@ import { login } from './view/login.js'
 import { posts } from './view/posts.js'
 import { register } from './view/register.js'
 
-export const changeRoute = (hash) => {
-  if (hash === '#/register' || hash === ' ') {
-    return showView(hash)
-  } else if (hash === '#/posts') {
-    return showView(hash)
-  } else if (hash === '#/login') {
-    return showView(hash)
-  } else {
-    return showView(hash)
-  }
-}
-
-const showView = (hash) => {
+/*funcion que crea enrutamientos entre las vistas usando SPA*/
+export const showView = (hash) => {
   const containerRoot = document.getElementById('root');
-
-
   switch (hash) {
     case '#':
       containerRoot.innerHTML = "";

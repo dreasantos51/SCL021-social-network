@@ -1,8 +1,9 @@
 import { loginWithEmail, loginWithGoogle } from "../authFirebase.js";
 
+/*Se crea funcion login que renderiza segun #/Login */
 export const login = () => {
 
-
+  /* div que contiene toda la estructura de la vista Login */
   const divLogin = document.createElement('div');
   divLogin.classList.add("loginPage");
 
@@ -36,6 +37,7 @@ export const login = () => {
   /*Boton de Iniciar*/
   const buttonLogin = document.createElement('button');
   buttonLogin.classList.add('buttonLogin');
+  buttonLogin.innerText = 'Iniciar Sesión'
   divContainer.appendChild(buttonLogin);
 
   buttonLogin.addEventListener("click", () => {
@@ -44,13 +46,7 @@ export const login = () => {
     loginWithEmail(emailLogin, passwordLogin);
   })
 
-  // const hrefLogin = document.createElement('a');
-  // hrefLogin.classList.add('hrefLogin');
-  // hrefLogin.innerText = 'Iniciar Sesión'
-  // hrefLogin.href = '#/posts'
-  // buttonLogin.appendChild(hrefLogin);
-
-  /*PROBANO --O-- */
+  /*--O-- */
   const containerLines = document.createElement("div");
   containerLines.id = "containerlines"
   containerLines.innerHTML = ` 
@@ -80,7 +76,7 @@ export const login = () => {
   redirectionRegister.classList.add('redirectionRegister');
   redirectionRegister.innerText = '¿Aún no tienes cuenta? '
   divContainer.appendChild(redirectionRegister);
-
+  /*Ruta que redirige a vista Register */
   const hrefRegister = document.createElement('a');
   hrefRegister.classList.add('hrefRegister');
   hrefRegister.innerText = 'Registrate'

@@ -4,32 +4,24 @@ import { usuario } from "../../main.js";
 import { showingPosts } from "../fireStore.js";
 import { savingPost } from "../index.js";
 
+/*Se crea funcion posts que renderiza segun #/Posts */
 export const posts = () => {
 
-
-
-  const body = document.getElementsByTagName("body");
-  if (window.location.hash === "#/posts") {
-    //console.log(body);
-    const bodyPosts = body[0];
-    bodyPosts.id = "bodyPosts";
-  }
-
+  /* div que contiene toda la estructura de la vista Posts */
   const divPosts = document.createElement("div");
   divPosts.classList.add("divPosts");
 
-  /*Header y menu desplegable*/
   /*Header*/
   const headerPost = document.createElement("header");
   headerPost.classList.add("headerPost");
   divPosts.appendChild(headerPost);
 
   /*Boton de menu "Hamburguesa"*/
-
   const buttonMenu = document.createElement("button");
   buttonMenu.classList.add("buttonMenu");
   headerPost.appendChild(buttonMenu);
 
+  /*Titulo*/
   const clubMatchTitle = document.createElement("h1");
   clubMatchTitle.classList.add("clubMatchTitle");
   clubMatchTitle.innerText = "Club Match";
@@ -59,10 +51,11 @@ export const posts = () => {
   liSignOff.classList.add("liMenu");
   ulPosts.appendChild(liSignOff);
 
+  //evento que escucha click y agrega class active a nav
   buttonMenu.addEventListener("click", () => {
     navPosts.classList.toggle("active");
   });
-
+  //se crea button para cerrar sesion y se le da funcionalidad para deslogear
   const signOutPosts = document.createElement("button");
   signOutPosts.id = "logOut"
   signOutPosts.innerText = "Cerrar Sesión";
@@ -70,8 +63,6 @@ export const posts = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        const bodyPosts = body[0];
-        bodyPosts.id = "bodyLogin";
       })
       .catch((error) => {
         // An error happened.
@@ -80,26 +71,26 @@ export const posts = () => {
   liSignOff.appendChild(signOutPosts);
 
   /*Profile */
+  //div que contiene la foto de perfil y nombre de usuario
   const divProfile = document.createElement("div");
   divProfile.id = "divProfile";
   divPosts.appendChild(divProfile);
 
   let imageUser = usuario.photoURL;
-  console.log(usuario);
-  console.log(usuario.photoURL);
 
   const imageProfile = document.createElement("img");
   imageProfile.id = "imageProfile";
-  imageProfile.src = imageUser != null ? imageUser : "./images/LogoClubMatch.png"
+  imageProfile.src = imageUser != null ? imageUser : "./images/LogoClubMatch.png" //se img es null utiliza el logo como img de perfil
   divProfile.appendChild(imageProfile);
 
   let userName = usuario.displayName;
   const nameProfile = document.createElement("h2");
   nameProfile.id = "nameProfile";
-  nameProfile.innerText = userName != null ? userName : auth.currentUser.email;
+  nameProfile.innerText = userName != null ? userName : auth.currentUser.email; //operador ternario, reconoce el "username" y se no existe ocupa el email
   divProfile.appendChild(nameProfile);
 
   /*Crear Post*/
+  //div que contiene  la estructura para crear un post
   const divCreatePost = document.createElement("div");
   divCreatePost.id = "divCreatePost";
   divPosts.appendChild(divCreatePost);
@@ -130,14 +121,14 @@ export const posts = () => {
   buttonPost.classList.add("buttonPost");
   buttonPost.innerText = "Publicar";
   divCreatePost.appendChild(buttonPost);
-
+  // escucha el click y guarda la informacion de lo post en firebase
   buttonPost.addEventListener("click", savingPost);
 
   /*Imprimir Posts*/
-
+  // div que contiene el template para mostrar los posts
   const divPrintPost = document.createElement("div");
   divPrintPost.id = "divPrintPost"
-
+  //function que trae los datos guardados en la colecion de firebase
   showingPosts((post) => {
     let viewHtml = `<div id="containerPost">
     <div id="userInfo">

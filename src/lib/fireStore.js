@@ -4,7 +4,7 @@ import {
 } from "./configFirebase.js";
 import { collection, addDoc, onSnapshot, query } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
 
-// Add a new document with a generated id.
+// funcion que genera en firebase un nuevo documento por cada post
 export const savePost = async (title, description, link) => {
     const docRef = await addDoc(collection(db, "Post"), {
         uid: auth.currentUser.uid,
@@ -15,12 +15,12 @@ export const savePost = async (title, description, link) => {
     });
     console.log("Document written with ID: ", docRef.id);
 }
-
+// funcion que muestra todos los post de la colección en tiempo real
 export const showingPosts = (callback) => {
     onSnapshot(query(collection(db, "Post")), (docs) => {
         docs.forEach(doc => {
             callback(doc.data())
-            //console.log(doc.data())
+
         })
     })
 

@@ -5,7 +5,7 @@ import { GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, si
 
 //login con google
 const provider = new GoogleAuthProvider();
-
+/*Funcion importada desde Firebase que inicia sesion con Google*/
 export let loginWithGoogle = () => {
   console.log('login')
   signInWithPopup(auth, provider)
@@ -28,11 +28,11 @@ export let loginWithGoogle = () => {
       // ...
     });
 }
-//crear el usuario
+//funcion importada desde Firebase para logear con usuario y contraseña*/
 export let registerWithEmail = (email, password, displayName) => {
   createUserWithEmailAndPassword(auth, email, password, displayName)
     .then((userCredential) => {
-      console.log("prueba")
+
       // Signed in
       const user = userCredential.user;
       console.log(user);
@@ -46,7 +46,7 @@ export let registerWithEmail = (email, password, displayName) => {
     });
 }
 
-//Login con email y contraseña
+//Funcion importada desde Firebase para iniciar Sesion desde la vista /#Login*/
 export let loginWithEmail = (email, password) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
