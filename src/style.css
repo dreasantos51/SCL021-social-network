@@ -1,230 +1,437 @@
+/* * {
+  outline: 1px solid limegreen !important;
+ } */
 body {
-    background-color: #BFD8D2;
+  background-color: #bfd8d2;
+  font-family: "Asap", sans-serif;
+  margin: 0;
+  color: #1e3f48;
+}
+
+/*LOGIN*/
+/*LOGO*/
+#containerLogo {
+  display: flex;
+  justify-content: center;
 }
 
 .logo {
-position: absolute;
-width: 339px;
-height: 346px;
-left: 11px;
-top: 27px;
-
-}
-#email {
-box-sizing: border-box;
-position: absolute;
-width: 286px;
-height: 63px;
-left: 37px;
-top: 389px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+  width: 60%;
+  height: 60%;
+  margin: 10% 0 0 0;
 }
 
-#password {
-box-sizing: border-box;
-position: absolute;
-width: 286px;
-height: 63px;
-left: 37px;
-top: 489px;
-background: #FEDDCD;
-border: 1px solid #000000;
-border-radius: 10px;
+/*Container Login*/
+.divContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#login {
-    position: absolute;
-    width: 100px;
-    height: 43px;
-    left: 223px;
-    top: 578px;
-    background: #DCB239;
-    border-radius: 10px;
-
+input {
+  padding-inline-start: 40px;
+  box-sizing: border-box;
 }
 
-#parrafo {
-position: absolute;
-width: 320px;
-height: 20px;
-left: 37px;
-top: 637px;
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 15px;
-line-height: 15px;
-color: #000000;
+input,
+#signUpGoogle {
+  background-color: rgb(247 243 242);
+  width: 80%;
+  height: 4em;
+  margin: 2em 0 0 0;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 
-#singUp {
-box-sizing: border-box;
-position: absolute;
-width: 286px;
-height: 63px;
-left: 37px;
-top: 683px;
-background: #FEDDCD;
-border: 1px solid #000000;
-border-radius: 10px;
+.forget {
+  margin-block-start: 10px;
 }
 
-.logoPagTwo{
-position: absolute;
-width: 99px;
-height: 101px;
-left: 10px;
-top: 14px;
+.hrefForget,
+.hrefLogin,
+.hrefRegister {
+  text-decoration: none;
+  font-weight: bold;
+  color: #1e3f48;
 }
 
-.name {
-position: absolute;
-width: 72px;
-height: 23px;
-left: 10px;
-top: 137px;
-
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #000000;
-
+.hrefForget:hover,
+.hrefRegister:hover {
+  color: white;
 }
 
-#nameid {
-box-sizing: border-box;
-position: absolute;
-width: 204px;
-height: 35px;
-left: 127px;
-top: 131px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+.buttonLogin {
+  background-color: #dcb239;
+  text-decoration: none;
+  width: 60%;
+  height: 43px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
-.edad {
-position: absolute;
-width: 45px;
-height: 23px;
-left: 10px;
-top: 209px;
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #000000;
+.buttonLogin:hover {
+  background-color: #df744a;
 }
 
-#edadid {
-box-sizing: border-box;
-position: absolute;
-width: 204px;
-height: 35px;
-left: 127px;
-top: 203px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+/*CotainerLines*/
+#containerlines {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
 }
 
-.pais{
-position: absolute;
-width: 36px;
-height: 23px;
-left: 10px;
-top: 281px;
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #000000;
-
+.space {
+  height: 2px;
+  padding: 0;
+  width: 5px;
 }
 
-#paisid {
-box-sizing: border-box;
-position: absolute;
-width: 204px;
-height: 35px;
-left: 127px;
-top: 275px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-
+#o {
+  color: #1e3f48bf;
+  font-size: 1.5em;
 }
 
-.email {    
-position: absolute;
-width: 50px;
-height: 23px;
-left: 10px;
-top: 353px;
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #000000;
+.line {
+  border-top: 1px solid #1e3f4866;
+  padding: 0;
+  width: 100%;
 }
 
-#emailid {
-box-sizing: border-box;
-position: absolute;
-width: 204px;
-height: 35px;
-left: 127px;
-top: 347px;
-background: #FEDDCD;
-border: 1px solid #000000;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+/*Botón Google*/
+#signUpGoogle {
+  background-color: white;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  font-size: 1em;
+  font-weight: bold;
+  width: 60%;
+  color: #1e3f48;
+  height: 43px;
+  margin: -10px 0 20px 0;
 }
 
-.password {
-position: absolute;
-width: 50px;
-height: 23px;
-left: 10px;
-top: 353px;
-font-family: 'Asap';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-color: #000000;
+.google {
+  width: 25px;
+  height: 25px;
 }
 
-#passwordId {
-    box-sizing: border-box;
-    position: absolute;
-    width: 204px;
-    height: 35px;
-    left: 127px;
-    top: 347px;
-    background: #FEDDCD;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    }  
+/*REGIsSTER*/
+.headerRegister {
+  background-image: url(./images/header.png);
+  height: 15vh;
+  display: flex;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+}
 
-#OK {
-position: absolute;
-width: 100px;
-height: 43px;
-left: 231px;
-top: 491px;
-background: #DCB239;
-border-radius: 10px;
+h1 {
+  font-family: "Pacifico", cursive;
+}
+
+.statement {
+  font-size: 1.5em;
+}
+
+.ClubMatch {
+  margin: 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em;
+}
+
+.divButtons {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-block-start: 2em;
+  flex-wrap: wrap;
+}
+
+#OK,
+#back,
+#buttonPost {
+  background-color: #dcb239;
+  text-decoration: none;
+  width: 100px;
+  height: 43px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  border-radius: 10px;
+  border: none;
+  margin: 0 0 1em 0;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+#OK:hover,
+#back:hover {
+  background-color: #df744a;
+}
+
+.hrefBack {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/*POSTS*/
+/* #bodyPosts {
+  background: rgba(254, 221, 205, 0.5);
+} */
+
+.divPosts {
+  background-color: #feddcd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#divProfile {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5em 0 2em 0;
+}
+
+#imageProfile {
+  border-radius: 50%;
+  width: 40%;
+}
+
+#divCreatePost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 70%;
+}
+
+.createPost {
+  padding: 20px;
+  margin: 0;
+  background: #ffffff;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#titlePost {
+  border-radius: 10px 10px 0 0;
+}
+
+#linkPost {
+  border-radius: 0 0 10px 10px;
+}
+
+.buttonPost {
+  width: 75px;
+  height: 37px;
+  background: #1e3f48;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  margin: 20px 0 0 200px;
+  border: none;
+}
+
+#divPrintPost {
+  width: 80%;
+}
+
+#containerPost {
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin: 25px 0;
+  box-sizing: content-box;
+  padding: 10px 10px;
+}
+
+#userInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* #userPhoto {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+} */
+
+#userName {
+  font-size: 0.9em;
+}
+
+#titleP {
+  margin-inline-start: 55px;
+}
+
+#descriptionPost,
+#linkP {
+  margin: 10px 30px;
+}
+
+#linkP {
+  color: blue;
+}
+
+#link {
+  width: 50px;
+  height: 50px;
+}
+
+#buttonLike {
+  background: transparent;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+
+#imgBtnLike {
+  width: 70px;
+  height: 70px;
+}
+
+/*  Código de nuestro menu */
+
+.headerPost {
+  background-color: #bfd8d2;
+  width: 100%;
+  padding: 0 0.5em;
+  box-shadow: 0px 10px 10px rgb(0 0 0 / 20%);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.clubMatchTitle {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.buttonMenu {
+  background-image: url(https://www.samueldiosdado.com/wp-content/uploads/2017/08/Men%C3%BA-hamburguesa-herramienta-practica-o-icono-inutil-624x522.png);
+  background-color: transparent;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: initial;
+  width: 50px;
+  height: 50px;
+  border: none;
+  display: none;
+}
+
+.ulPosts {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.liMenu {
+  margin: 0.5em;
+  list-style: none;
+}
+
+#logOut {
+  background: none;
+  border: none;
+  color: #1e3f48;
+  font-family: "Asap", sans-serif;
+  font-size: 16px;
+}
+
+.imgHeader {
+  width: 100px;
+  height: 100px;
+}
+
+@media (min-width: 700px) {
+  #root {
+    display: flex;
+    justify-content: center;
+  }
+
+  .loginPage,
+  .container {
+    margin: 0 auto;
+    border-radius: 5%;
+    background-color: rgba(191, 216, 210, 77%);
+  }
+
+  body {
+    background-image: url(https://payload.cargocollective.com/1/18/592058/14124816/HEADER.gif);
+    background-size: contain;
+    background-position: center;
+    background-blend-mode: screen;
+    padding: 30px;
+  }
+
+  .divPosts {
+    width: 100%;
+    background: #feddcdc9;
+  }
+
+  .forget,
+  .redirectionRegister {
+    font-size: 1.5em;
+  }
+
+  #signUpGoogle {
+    margin: -10px 0 20px 0;
+  }
+
+  header {
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .navPosts {
+    width: 100%;
+    display: none;
+  }
+
+  .navPosts.active {
+    display: block;
+  }
+
+  .buttonMenu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .ulPosts {
+    flex-direction: column;
+  }
+
+  .liMenu {
+    margin: 1rem 0;
+    list-style: none;
+  }
 }
