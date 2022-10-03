@@ -2,7 +2,7 @@
 Hey, te gusta salir o hacer alguna actividad  y no tienes con quien?
 Bienvenidx  a   ** Club Match** , ¡Regístrate ! 
  Aquí encontraras amigos o solo personas con quienes  compartir  el mismo pasatiempo, crear clubes y tener un espacio para conversar.
-- Link proyecto: [Ir al Sitio](https://)
+- Link proyecto: [Ir al Sitio](https://samanthamorales24.github.io/SCL021-social-network/src/index.html)
 
 
 
